@@ -29,7 +29,6 @@ carousel, definisi, kapan didirikan, struktur organisasi, berita, kontak, eventn
 
 definisi, organisasi (bagan), artikel2, dan berita.
 
-
 framework : next js
 styling : material ui
 authoritarian : next auth

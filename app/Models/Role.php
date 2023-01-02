@@ -7,18 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    use HasFactory;
-    protected $guarded = [
-        'id',
-        'timestamps',
-    ];
+  use HasFactory;
+  protected $guarded = ["id", "timestamps"];
 
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
-    public function getRouteKeyName()
-    {
-        return 'name';
-    }
+  public function user()
+  {
+    return $this->hasMany(User::class);
+  }
+  public function getRouteKeyName()
+  {
+    return "name";
+  }
 }

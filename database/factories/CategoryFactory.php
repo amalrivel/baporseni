@@ -10,16 +10,16 @@ use Faker\Factory as Faker;
  */
 class CategoryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition()
-    {
-        $faker = Faker::create('ja_JP');
-        return [
-            'name' => $faker->kanaName,
-        ];
-    }
+  /**
+   * Define the model's default state.
+   *
+   * @return array<string, mixed>
+   */
+  public function definition()
+  {
+    $faker = Faker::create("ja_JP");
+    return [
+      "name" => $faker->kanaName,
+    ];
+  }
 }

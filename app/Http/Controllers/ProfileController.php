@@ -11,60 +11,60 @@ use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Inertia\Response
-     */
-    public function edit(Request $request)
-    {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
-        ]);
+  /**
+   * Display the user's profile form.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Inertia\Response
+   */
+  public function edit(Request $request)
+  {
+    return Inertia::render("Profile/Edit", [
+      "mustVerifyEmail" => $request->user() instanceof MustVerifyEmail,
+      "status" => session("status"),
+    ]);
+  }
+
+  /**
+   * Update the user's profile information.
+   *
+   * @param  \App\Http\Requests\ProfileUpdateRequest  $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function update(ProfileUpdateRequest $request)
+  {
+    $request->user()->fill($request->validated());
+
+    if ($request->user()->isDirty("email")) {
+      $request->user()->email_verified_at = null;
     }
 
-    /**
-     * Update the user's profile information.
-     *
-     * @param  \App\Http\Requests\ProfileUpdateRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(ProfileUpdateRequest $request)
-    {
-        $request->user()->fill($request->validated());
+    $request->user()->save();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+    return Redirect::route("profile.edit");
+  }
 
-        $request->user()->save();
+  /**
+   * Delete the user's account.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function destroy(Request $request)
+  {
+    $request->validate([
+      "password" => ["required", "current-password"],
+    ]);
 
-        return Redirect::route('profile.edit');
-    }
+    $user = $request->user();
 
-    /**
-     * Delete the user's account.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function destroy(Request $request)
-    {
-        $request->validate([
-            'password' => ['required', 'current-password'],
-        ]);
+    Auth::logout();
 
-        $user = $request->user();
+    $user->delete();
 
-        Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
 
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
-    }
+    return Redirect::to("/");
+  }
 }

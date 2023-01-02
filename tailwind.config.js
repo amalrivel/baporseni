@@ -17,5 +17,10 @@ module.exports = {
     },
   },
 
+  corePlugins: {
+    preflight: false,
+  },
+
+  prefix: "tw-",
   plugins: [require("@tailwindcss/forms")],
 };

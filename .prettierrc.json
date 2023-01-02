@@ -6,6 +6,8 @@
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
   "jsxSingleQuote": false,
+  "plugins": ["@prettier/plugin-php", "prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": ["."],
   "printWidth": 80,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
@@ -14,6 +16,7 @@
   "singleAttributePerLine": false,
   "singleQuote": false,
   "tabWidth": 2,
+  "tailwindConfig": "./tailwind.config.js",
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false

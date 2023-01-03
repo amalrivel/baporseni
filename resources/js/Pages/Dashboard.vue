@@ -8,15 +8,15 @@ import { Head } from "@inertiajs/inertia-vue3";
 
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-gray-800">
+      <h2 class="tw-text-xl tw-font-semibold tw-leading-tight tw-text-gray-800">
         Dashboard
       </h2>
     </template>
 
-    <div class="py-12">
-      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-          <div class="p-6 text-gray-900">You're logged in!</div>
+    <div class="tw-py-12">
+      <div class="tw-mx-auto tw-max-w-7xl sm:tw-px-6 lg:tw-px-8">
+        <div class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
+          <div class="tw-p-6 tw-text-gray-900">You're logged in!</div>
         </div>
       </div>
     </div>

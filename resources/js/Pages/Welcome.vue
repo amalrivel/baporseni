@@ -13,39 +13,39 @@ defineProps({
   <Head title="Welcome" />
 
   <div
-    class="items-top relative flex min-h-screen justify-center bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"
+    class="items-top tw-relative tw-flex tw-min-h-screen tw-justify-center tw-bg-gray-100 dark:tw-bg-gray-900 sm:tw-items-center sm:tw-pt-0"
   >
-    <div v-if="canLogin" class="fixed top-0 right-0 hidden px-6 py-4 sm:block">
+    <div v-if="canLogin" class="tw-fixed tw-top-0 tw-right-0 tw-hidden tw-px-6 tw-py-4 sm:tw-block">
       <Link
         v-if="$page.props.auth.user"
         :href="route('dashboard')"
-        class="text-sm text-gray-700 underline dark:text-gray-500"
+        class="tw-text-sm tw-text-gray-700 tw-underline dark:tw-text-gray-500"
         >Dashboard</Link
       >
 
       <template v-else>
         <Link
           :href="route('login')"
-          class="text-sm text-gray-700 underline dark:text-gray-500"
+          class="tw-text-sm tw-text-gray-700 tw-underline dark:tw-text-gray-500"
           >Log in</Link
         >
 
         <Link
           v-if="canRegister"
           :href="route('register')"
-          class="ml-4 text-sm text-gray-700 underline dark:text-gray-500"
+          class="tw-ml-4 tw-text-sm tw-text-gray-700 tw-underline dark:tw-text-gray-500"
           >Register</Link
         >
       </template>
     </div>
 
-    <div class="mx-auto max-w-6xl sm:px-6 lg:px-8">
-      <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+    <div class="tw-mx-auto tw-max-w-6xl sm:tw-px-6 lg:tw-px-8">
+      <div class="tw-flex tw-justify-center tw-pt-8 sm:tw-justify-start sm:tw-pt-0">
         <svg
           viewBox="0 0 651 192"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-16 w-auto text-gray-700 sm:h-20"
+          class="tw-h-16 tw-w-auto tw-text-gray-700 sm:tw-h-20"
         >
           <g clip-path="url(#clip0)" fill="#EF3B2D">
             <path
@@ -56,11 +56,11 @@ defineProps({
       </div>
 
       <div
-        class="mt-8 overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-lg"
+        class="tw-mt-8 tw-overflow-hidden tw-bg-white tw-shadow dark:tw-bg-gray-800 sm:tw-rounded-lg"
       >
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="p-6">
-            <div class="flex items-center">
+        <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2">
+          <div class="tw-p-6">
+            <div class="tw-flex tw-items-center">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -68,23 +68,23 @@ defineProps({
                 stroke-linejoin="round"
                 stroke-width="2"
                 viewBox="0 0 24 24"
-                class="h-8 w-8 text-gray-500"
+                class="tw-h-8 tw-w-8 tw-text-gray-500"
               >
                 <path
                   d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 ></path>
               </svg>
-              <div class="ml-4 text-lg font-semibold leading-7">
+              <div class="tw-ml-4 tw-text-lg tw-font-semibold tw-leading-7">
                 <a
                   href="https://laravel.com/docs"
-                  class="text-gray-900 underline dark:text-white"
+                  class="tw-text-gray-900 tw-underline dark:tw-text-white"
                   >Documentation</a
                 >
               </div>
             </div>
 
-            <div class="ml-12">
-              <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <div class="tw-ml-12">
+              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
                 Laravel has wonderful, thorough documentation covering every
                 aspect of the framework. Whether you are new to the framework or
                 have previous experience with Laravel, we recommend reading all
@@ -94,9 +94,9 @@ defineProps({
           </div>
 
           <div
-            class="border-t border-gray-200 p-6 dark:border-gray-700 md:border-t-0 md:border-l"
+            class="tw-border-t tw-border-gray-200 tw-p-6 dark:tw-border-gray-700 md:tw-border-t-0 md:tw-border-l"
           >
-            <div class="flex items-center">
+            <div class="tw-flex tw-items-center">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -104,24 +104,24 @@ defineProps({
                 stroke-linejoin="round"
                 stroke-width="2"
                 viewBox="0 0 24 24"
-                class="h-8 w-8 text-gray-500"
+                class="tw-h-8 tw-w-8 tw-text-gray-500"
               >
                 <path
                   d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
                 ></path>
                 <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
-              <div class="ml-4 text-lg font-semibold leading-7">
+              <div class="tw-ml-4 tw-text-lg tw-font-semibold tw-leading-7">
                 <a
                   href="https://laracasts.com"
-                  class="text-gray-900 underline dark:text-white"
+                  class="tw-text-gray-900 tw-underline dark:tw-text-white"
                   >Laracasts</a
                 >
               </div>
             </div>
 
-            <div class="ml-12">
-              <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <div class="tw-ml-12">
+              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
                 Laracasts offers thousands of video tutorials on Laravel, PHP,
                 and JavaScript development. Check them out, see for yourself,
                 and massively level up your development skills in the process.
@@ -129,8 +129,8 @@ defineProps({
             </div>
           </div>
 
-          <div class="border-t border-gray-200 p-6 dark:border-gray-700">
-            <div class="flex items-center">
+          <div class="tw-border-t tw-border-gray-200 tw-p-6 dark:tw-border-gray-700">
+            <div class="tw-flex tw-items-center">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -138,23 +138,23 @@ defineProps({
                 stroke-linejoin="round"
                 stroke-width="2"
                 viewBox="0 0 24 24"
-                class="h-8 w-8 text-gray-500"
+                class="tw-h-8 tw-w-8 tw-text-gray-500"
               >
                 <path
                   d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
                 ></path>
               </svg>
-              <div class="ml-4 text-lg font-semibold leading-7">
+              <div class="tw-ml-4 tw-text-lg tw-font-semibold tw-leading-7">
                 <a
                   href="https://laravel-news.com/"
-                  class="text-gray-900 underline dark:text-white"
+                  class="tw-text-gray-900 tw-underline dark:tw-text-white"
                   >Laravel News</a
                 >
               </div>
             </div>
 
-            <div class="ml-12">
-              <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <div class="tw-ml-12">
+              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
                 Laravel News is a community driven portal and newsletter
                 aggregating all of the latest and most important news in the
                 Laravel ecosystem, including new package releases and tutorials.
@@ -163,9 +163,9 @@ defineProps({
           </div>
 
           <div
-            class="border-t border-gray-200 p-6 dark:border-gray-700 md:border-l"
+            class="tw-border-t tw-border-gray-200 tw-p-6 dark:tw-border-gray-700 md:tw-border-l"
           >
-            <div class="flex items-center">
+            <div class="tw-flex tw-items-center">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -173,48 +173,48 @@ defineProps({
                 stroke-linejoin="round"
                 stroke-width="2"
                 viewBox="0 0 24 24"
-                class="h-8 w-8 text-gray-500"
+                class="tw-h-8 tw-w-8 tw-text-gray-500"
               >
                 <path
                   d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
               <div
-                class="ml-4 text-lg font-semibold leading-7 text-gray-900 dark:text-white"
+                class="tw-ml-4 tw-text-lg tw-font-semibold tw-leading-7 tw-text-gray-900 dark:tw-text-white"
               >
                 Vibrant Ecosystem
               </div>
             </div>
 
-            <div class="ml-12">
-              <div class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <div class="tw-ml-12">
+              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
                 Laravel's robust library of first-party tools and libraries,
                 such as
-                <a href="https://forge.laravel.com" class="underline">Forge</a>,
-                <a href="https://vapor.laravel.com" class="underline">Vapor</a>,
-                <a href="https://nova.laravel.com" class="underline">Nova</a>,
+                <a href="https://forge.laravel.com" class="tw-underline">Forge</a>,
+                <a href="https://vapor.laravel.com" class="tw-underline">Vapor</a>,
+                <a href="https://nova.laravel.com" class="tw-underline">Nova</a>,
                 and
-                <a href="https://envoyer.io" class="underline">Envoyer</a> help
+                <a href="https://envoyer.io" class="tw-underline">Envoyer</a> help
                 you take your projects to the next level. Pair them with
                 powerful open source libraries like
-                <a href="https://laravel.com/docs/billing" class="underline"
+                <a href="https://laravel.com/docs/billing" class="tw-underline"
                   >Cashier</a
                 >,
-                <a href="https://laravel.com/docs/dusk" class="underline"
+                <a href="https://laravel.com/docs/dusk" class="tw-underline"
                   >Dusk</a
                 >,
                 <a
                   href="https://laravel.com/docs/broadcasting"
-                  class="underline"
+                  class="tw-underline"
                   >Echo</a
                 >,
-                <a href="https://laravel.com/docs/horizon" class="underline"
+                <a href="https://laravel.com/docs/horizon" class="tw-underline"
                   >Horizon</a
                 >,
-                <a href="https://laravel.com/docs/sanctum" class="underline"
+                <a href="https://laravel.com/docs/sanctum" class="tw-underline"
                   >Sanctum</a
                 >,
-                <a href="https://laravel.com/docs/telescope" class="underline"
+                <a href="https://laravel.com/docs/telescope" class="tw-underline"
                   >Telescope</a
                 >, and more.
               </div>
@@ -223,9 +223,9 @@ defineProps({
         </div>
       </div>
 
-      <div class="mt-4 flex justify-center sm:items-center sm:justify-between">
-        <div class="text-center text-sm text-gray-500 sm:text-left">
-          <div class="flex items-center">
+      <div class="tw-mt-4 tw-flex tw-justify-center sm:tw-items-center sm:tw-justify-between">
+        <div class="tw-text-center tw-text-sm tw-text-gray-500 sm:tw-text-left">
+          <div class="tw-flex tw-items-center">
             <svg
               fill="none"
               stroke-linecap="round"
@@ -233,14 +233,14 @@ defineProps({
               stroke-width="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              class="-mt-px h-5 w-5 text-gray-400"
+              class="tw--mt-px tw-h-5 tw-w-5 tw-text-gray-400"
             >
               <path
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               ></path>
             </svg>
 
-            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
+            <a href="https://laravel.bigcartel.com" class="tw-ml-1 tw-underline">
               Shop
             </a>
 
@@ -251,7 +251,7 @@ defineProps({
               stroke-linejoin="round"
               stroke-width="2"
               viewBox="0 0 24 24"
-              class="ml-4 -mt-px h-5 w-5 text-gray-400"
+              class="tw-ml-4 tw--mt-px tw-h-5 tw-w-5 tw-text-gray-400"
             >
               <path
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
@@ -260,7 +260,7 @@ defineProps({
 
             <a
               href="https://github.com/sponsors/taylorotwell"
-              class="ml-1 underline"
+              class="tw-ml-1 tw-underline"
             >
               Sponsor
             </a>
@@ -268,14 +268,14 @@ defineProps({
         </div>
 
         <div
-          class="ml-4 text-center text-sm text-gray-500 sm:ml-0 sm:text-right"
+          class="tw-ml-4 tw-text-center tw-text-sm tw-text-gray-500 sm:tw-ml-0 sm:tw-text-right"
         >
           Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
         </div>
       </div>
     </div>
   </div>
-  <div class="bg-gray-900 text-center">
+  <div class="tw-bg-gray-900 tw-text-center">
     <v-pagination v-model="page" :length="6"></v-pagination>
   </div>
 </template>

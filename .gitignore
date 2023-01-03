@@ -2,7 +2,12 @@
 /public/build
 /public/hot
 /public/storage
+public_html/storage
+public_html/hot
+public_html/build
 /storage/*.key
+bootstrap/compiled.php
+app/storage/
 /vendor
 .env
 .env.backup
@@ -15,6 +20,7 @@ npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
+/.vagrant
 /.vscode
 
 # Created by https://www.toptal.com/developers/gitignore/api/yarn

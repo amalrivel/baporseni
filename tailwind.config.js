@@ -17,9 +17,9 @@ module.exports = {
     },
   },
 
-//   corePlugins: {
-//     preflight: false,
-//   },
+  //   corePlugins: {
+  //     preflight: false,
+  //   },
 
   prefix: "tw-",
   plugins: [require("@tailwindcss/forms")],

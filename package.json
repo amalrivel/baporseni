@@ -24,6 +24,7 @@
     "vue": "^3.2.41"
   },
   "dependencies": {
+    "cssnano": "^5.1.14",
     "vuetify": "^3.0.6"
   }
 }

@@ -15,7 +15,9 @@ import { Head } from "@inertiajs/inertia-vue3";
 
     <div class="tw-py-12">
       <div class="tw-mx-auto tw-max-w-7xl sm:tw-px-6 lg:tw-px-8">
-        <div class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
+        <div
+          class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg"
+        >
           <div class="tw-p-6 tw-text-gray-900">You're logged in!</div>
         </div>
       </div>

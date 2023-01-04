@@ -15,7 +15,10 @@ defineProps({
   <div
     class="items-top tw-relative tw-flex tw-min-h-screen tw-justify-center tw-bg-gray-100 dark:tw-bg-gray-900 sm:tw-items-center sm:tw-pt-0"
   >
-    <div v-if="canLogin" class="tw-fixed tw-top-0 tw-right-0 tw-hidden tw-px-6 tw-py-4 sm:tw-block">
+    <div
+      v-if="canLogin"
+      class="tw-fixed tw-top-0 tw-right-0 tw-hidden tw-px-6 tw-py-4 sm:tw-block"
+    >
       <Link
         v-if="$page.props.auth.user"
         :href="route('dashboard')"
@@ -40,7 +43,9 @@ defineProps({
     </div>
 
     <div class="tw-mx-auto tw-max-w-6xl sm:tw-px-6 lg:tw-px-8">
-      <div class="tw-flex tw-justify-center tw-pt-8 sm:tw-justify-start sm:tw-pt-0">
+      <div
+        class="tw-flex tw-justify-center tw-pt-8 sm:tw-justify-start sm:tw-pt-0"
+      >
         <svg
           viewBox="0 0 651 192"
           fill="none"
@@ -84,7 +89,9 @@ defineProps({
             </div>
 
             <div class="tw-ml-12">
-              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
+              <div
+                class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400"
+              >
                 Laravel has wonderful, thorough documentation covering every
                 aspect of the framework. Whether you are new to the framework or
                 have previous experience with Laravel, we recommend reading all
@@ -121,7 +128,9 @@ defineProps({
             </div>
 
             <div class="tw-ml-12">
-              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
+              <div
+                class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400"
+              >
                 Laracasts offers thousands of video tutorials on Laravel, PHP,
                 and JavaScript development. Check them out, see for yourself,
                 and massively level up your development skills in the process.
@@ -129,7 +138,9 @@ defineProps({
             </div>
           </div>
 
-          <div class="tw-border-t tw-border-gray-200 tw-p-6 dark:tw-border-gray-700">
+          <div
+            class="tw-border-t tw-border-gray-200 tw-p-6 dark:tw-border-gray-700"
+          >
             <div class="tw-flex tw-items-center">
               <svg
                 fill="none"
@@ -154,7 +165,9 @@ defineProps({
             </div>
 
             <div class="tw-ml-12">
-              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
+              <div
+                class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400"
+              >
                 Laravel News is a community driven portal and newsletter
                 aggregating all of the latest and most important news in the
                 Laravel ecosystem, including new package releases and tutorials.
@@ -187,15 +200,21 @@ defineProps({
             </div>
 
             <div class="tw-ml-12">
-              <div class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400">
+              <div
+                class="tw-mt-2 tw-text-sm tw-text-gray-600 dark:tw-text-gray-400"
+              >
                 Laravel's robust library of first-party tools and libraries,
                 such as
-                <a href="https://forge.laravel.com" class="tw-underline">Forge</a>,
-                <a href="https://vapor.laravel.com" class="tw-underline">Vapor</a>,
-                <a href="https://nova.laravel.com" class="tw-underline">Nova</a>,
-                and
-                <a href="https://envoyer.io" class="tw-underline">Envoyer</a> help
-                you take your projects to the next level. Pair them with
+                <a href="https://forge.laravel.com" class="tw-underline"
+                  >Forge</a
+                >,
+                <a href="https://vapor.laravel.com" class="tw-underline"
+                  >Vapor</a
+                >,
+                <a href="https://nova.laravel.com" class="tw-underline">Nova</a
+                >, and
+                <a href="https://envoyer.io" class="tw-underline">Envoyer</a>
+                help you take your projects to the next level. Pair them with
                 powerful open source libraries like
                 <a href="https://laravel.com/docs/billing" class="tw-underline"
                   >Cashier</a
@@ -214,7 +233,9 @@ defineProps({
                 <a href="https://laravel.com/docs/sanctum" class="tw-underline"
                   >Sanctum</a
                 >,
-                <a href="https://laravel.com/docs/telescope" class="tw-underline"
+                <a
+                  href="https://laravel.com/docs/telescope"
+                  class="tw-underline"
                   >Telescope</a
                 >, and more.
               </div>
@@ -223,7 +244,9 @@ defineProps({
         </div>
       </div>
 
-      <div class="tw-mt-4 tw-flex tw-justify-center sm:tw-items-center sm:tw-justify-between">
+      <div
+        class="tw-mt-4 tw-flex tw-justify-center sm:tw-items-center sm:tw-justify-between"
+      >
         <div class="tw-text-center tw-text-sm tw-text-gray-500 sm:tw-text-left">
           <div class="tw-flex tw-items-center">
             <svg
@@ -240,7 +263,10 @@ defineProps({
               ></path>
             </svg>
 
-            <a href="https://laravel.bigcartel.com" class="tw-ml-1 tw-underline">
+            <a
+              href="https://laravel.bigcartel.com"
+              class="tw-ml-1 tw-underline"
+            >
               Shop
             </a>
 

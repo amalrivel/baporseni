@@ -9,6 +9,7 @@ import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 
 // Vuetify 24225
 import "vuetify/styles"; //22788
+import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
@@ -17,7 +18,8 @@ const appName =
   window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  //   title: (title) => `${title} - ${appName}`,
+  title: (title) => `${title}`,
   resolve: (name) =>
     resolvePageComponent(
       `./Pages/${name}.vue`,

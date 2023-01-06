@@ -302,7 +302,7 @@ defineProps({
     </div>
   </div>
   <div class="tw-bg-gray-900 tw-text-center">
-    <v-pagination v-model="page" :length="6"></v-pagination>
+    <v-pagination v-model="page" :length="10"></v-pagination>
   </div>
 </template>
 

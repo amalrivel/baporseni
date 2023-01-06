@@ -9,7 +9,7 @@ import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 
 // Vuetify 24225
 import "vuetify/styles"; //22788
-import '@mdi/font/css/materialdesignicons.css'
+import "@mdi/font/css/materialdesignicons.css";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";

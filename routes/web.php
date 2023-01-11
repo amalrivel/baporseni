@@ -24,26 +24,39 @@ Route::get("/", function () {
   ]);
 });
 
-// Route::get("/dashboard", function () {
-//   return Inertia::render("Dashboard");
-// })
-//   ->middleware(["auth", "verified"])
-//   ->name("dashboard");
+Route::get("/profil", function () {
+  return Inertia::render("Profil", [
+    "laravelVersion" => Application::VERSION,
+    "phpVersion" => PHP_VERSION,
+  ]);
+})->name("profil");
+Route::get("/cabang", function () {
+  return Inertia::render("CabangKegiatan", [
+    "laravelVersion" => Application::VERSION,
+    "phpVersion" => PHP_VERSION,
+  ]);
+})->name("cabangKegiatan");
 
-// Route::resource("/dashboard/posts", PostController::class, [
-//   "as" => "dashboard",
-// ])->middleware(["auth", "verified"]);
+Route::get("/dashboard", function () {
+  return Inertia::render("Dashboard");
+})
+  ->middleware(["auth", "verified"])
+  ->name("dashboard");
 
-// Route::middleware("auth")->group(function () {
-//   Route::get("/profile", [ProfileController::class, "edit"])->name(
-//     "profile.edit"
-//   );
-//   Route::patch("/profile", [ProfileController::class, "update"])->name(
-//     "profile.update"
-//   );
-//   Route::delete("/profile", [ProfileController::class, "destroy"])->name(
-//     "profile.destroy"
-//   );
-// });
+Route::resource("/dashboard/posts", PostController::class, [
+  "as" => "dashboard",
+])->middleware(["auth", "verified"]);
 
-// require __DIR__ . "/auth.php";
+Route::middleware("auth")->group(function () {
+  Route::get("/profile", [ProfileController::class, "edit"])->name(
+    "profile.edit"
+  );
+  Route::patch("/profile", [ProfileController::class, "update"])->name(
+    "profile.update"
+  );
+  Route::delete("/profile", [ProfileController::class, "destroy"])->name(
+    "profile.destroy"
+  );
+});
+
+require __DIR__ . "/auth.php";

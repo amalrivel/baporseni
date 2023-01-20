@@ -56,7 +56,8 @@
               <h1>IMG</h1>
               <h2>Baporseni</h2>
             </div>
-            <ul class="tw-flex tw-flex-wrap tw-justify-center tw-items-center tw-justify-end tw-gap-4">
+            <ul
+              class="tw-flex tw-flex-wrap tw-items-center tw-justify-center tw-gap-4">
               <li><Link href="/">Beranda</Link></li>
               <li><Link :href="route('profil')">Profil</Link></li>
               <li>

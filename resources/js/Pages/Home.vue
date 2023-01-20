@@ -6,13 +6,24 @@
       height=""
       hide-delimiters
       show-arrows="hover"
-      class="tw-mx-auto tw-h-56 sm:tw-h-96 2xl:tw-container">
-      <v-carousel-item v-for="(slide, i) in slides" :key="i">
-        <v-sheet :color="colors[i]" height="100%">
-          <div class="d-flex fill-height justify-center align-center">
-            <div class="text-h2">{{ slide }} Slide</div>
-          </div>
-        </v-sheet>
+      class="tw-mx-auto tw-h-[400px] sm:tw-h-[600px] 2xl:tw-container">
+      <v-carousel-item
+        v-for="(slide, i) in slides"
+        :key="i"
+        :src="`https://picsum.photos/120${i}`"
+        cover
+        :gradient="`to left bottom, rgba(${Math.floor(
+          Math.random() * 256
+        )},${Math.floor(Math.random() * 256)},${Math.floor(
+          Math.random() * 256
+        )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
+          Math.random() * 256
+        )},${Math.floor(Math.random() * 256)},.5)`">
+        <!-- <div class="d-flex fill-height justify-center align-center"> -->
+        <div
+          class="tw-flex tw-h-full tw-flex-col tw-items-start tw-justify-end tw-p-4 sm:tw-p-16">
+          <h1 class="tw-text-white">{{ slide }} Slide</h1>
+        </div>
       </v-carousel-item>
     </v-carousel>
     <div class="-tw-mt-8 tw-bg-slate-100">
@@ -52,11 +63,10 @@
               </p>
             </v-img>
           </div>
-
           <v-img
-            v-for="n in 10"
-            :key="n"
-            src="https://picsum.photos/3000"
+            v-for="repetion in repetions"
+            :key="repetion"
+            :src="`https://picsum.photos/300${repetion}`"
             alt=""
             :aspect-ratio="aspectRatio"
             :gradient="`to left bottom, rgba(${Math.floor(
@@ -84,12 +94,15 @@
               eros eu, finibus commodo urna. Vivamus accumsan viverra imperdiet.
             </p>
           </v-img>
+          <v-btn variant="outlined" class=" tw-col-span-2 sm:tw-col-span-3">
+            Selengkapnya
+          </v-btn>
         </div>
       </div>
       <v-parallax
         src="https://picsum.photos/1009"
         height="500"
-        class="tw-z-0 -tw-mt-16">
+        class="tw-z-0 sm:-tw-mt-16">
         <div
           class="d-flex flex-column fill-height justify-center align-center text-white">
           <h1 class="text-h4 font-weight-thin mb-4">Vuetify</h1>
@@ -101,10 +114,11 @@
     <div class="tw-container tw-mx-auto -tw-mt-8 tw-p-4">
       <div class="tw-flex tw-flex-col">
         <h2>Cabang Olahraga Seni</h2>
-        <div class="tw-mt-4 tw-flex tw-flex-wrap tw-justify-evenly tw-gap-4">
-          <v-card v-for="n in 10" :key="n" width="300">
+        <div
+          class="grid tw-col-span-1 tw-mt-4 tw-grid tw-gap-4 sm:tw-grid-cols-2 md:tw-grid-cols-3">
+          <v-card v-for="n in 6" :key="n">
             <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+              :src="`https://picsum.photos/100${n}`"
               class="align-end"
               :gradient="`to left bottom, rgba(${Math.floor(
                 Math.random() * 256
@@ -144,6 +158,7 @@ export default {
         "deep-purple accent-4",
       ],
       slides: ["First", "Second", "Third", "Fourth", "Fifth"],
+      repetions: [0, 1, 2, 3],
     };
   },
 };

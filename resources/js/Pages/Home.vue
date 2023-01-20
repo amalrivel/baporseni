@@ -6,7 +6,7 @@
       height=""
       hide-delimiters
       show-arrows="hover"
-      class="tw-mx-auto 2xl:tw-container sm:tw-h-96 tw-h-56">
+      class="tw-mx-auto tw-h-56 sm:tw-h-96 2xl:tw-container">
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
         <v-sheet :color="colors[i]" height="100%">
           <div class="d-flex fill-height justify-center align-center">
@@ -17,10 +17,10 @@
     </v-carousel>
     <div class="-tw-mt-8 tw-bg-slate-100">
       <div
-        class="tw-container tw-relative tw-z-40 tw-mx-auto sm:tw-mt-8 tw-flex tw-flex-col tw-bg-white tw-p-4 sm:tw-rounded-lg">
+        class="tw-container tw-relative tw-z-40 tw-mx-auto tw-flex tw-flex-col tw-bg-white tw-p-4 sm:tw-mt-8 sm:tw-rounded-lg">
         <h2>Berita Terbaru</h2>
-        <div class="tw-mt-4 tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 tw-gap-4">
-          <div class="tw-rounded tw-col-span-2">
+        <div class="tw-mt-4 tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3">
+          <div class="tw-col-span-2 tw-rounded">
             <v-img
               src="https://picsum.photos/3000"
               alt=""
@@ -87,7 +87,6 @@
         </div>
       </div>
       <v-parallax
-
         src="https://picsum.photos/1009"
         height="500"
         class="tw-z-0 -tw-mt-16">
@@ -122,7 +121,6 @@
         </div>
       </div>
     </div>
-
   </HomeLayout>
 </template>
 

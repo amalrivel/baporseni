@@ -9,8 +9,7 @@
       </v-breadcrumbs>
     </div>
     <div
-      class="tw-container tw-mx-auto -tw-mt-8 tw-flex tw-flex-wrap tw-justify-evenly tw-gap-4 tw-p-4"
-    >
+      class="tw-container tw-mx-auto -tw-mt-8 tw-flex tw-flex-wrap tw-justify-evenly tw-gap-4 tw-p-4">
       <v-card v-for="n in 10" :key="n" width="300">
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
@@ -23,8 +22,7 @@
             Math.random() * 256
           )},${Math.floor(Math.random() * 256)},.5)`"
           height="200px"
-          cover
-        >
+          cover>
           <v-card-actions>
             <v-card-title class="text-white">Pre-fab homes</v-card-title>
 
@@ -36,8 +34,7 @@
                   ? 'mdi-chevron-up text-white'
                   : 'mdi-chevron-down text-white'
               "
-              @click="show = !show"
-            ></v-btn>
+              @click="show = !show"></v-btn>
           </v-card-actions>
         </v-img>
         <v-expand-transition>

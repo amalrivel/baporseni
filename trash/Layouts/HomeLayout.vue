@@ -14,8 +14,7 @@
     <slot />
     <footer class="tw-mt-auto">
       <div
-        class="tw-container tw-mx-auto tw-flex tw-flex-col tw-items-center tw-gap-4 tw-p-4"
-      >
+        class="tw-container tw-mx-auto tw-flex tw-flex-col tw-items-center tw-gap-4 tw-p-4">
         <div class="tw-flex tw-gap-4">
           <h1>IMG</h1>
           <h2>Baporseni</h2>

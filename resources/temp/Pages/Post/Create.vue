@@ -17,8 +17,7 @@
                 ref="title"
                 v-model="form.title"
                 type="text"
-                class="mt-1 block w-full"
-              />
+                class="mt-1 block w-full" />
               <InputError :message="form.errors.title" class="mt-2" />
             </div>
             <PrimaryButton :disabled="form.processing">Save</PrimaryButton>

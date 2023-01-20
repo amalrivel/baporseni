@@ -51,8 +51,7 @@ const open = ref(false);
     <div
       v-show="open"
       class="tw-fixed tw-inset-0 tw-z-40"
-      @click="open = false"
-    ></div>
+      @click="open = false"></div>
 
     <transition
       enter-active-class="tw-transition tw-ease-out tw-duration-200"
@@ -60,19 +59,16 @@ const open = ref(false);
       enter-to-class="tw-transform tw-opacity-100 tw-scale-100"
       leave-active-class="tw-transition tw-ease-in tw-duration-75"
       leave-from-class="tw-transform tw-opacity-100 tw-scale-100"
-      leave-to-class="tw-transform tw-opacity-0 tw-scale-95"
-    >
+      leave-to-class="tw-transform tw-opacity-0 tw-scale-95">
       <div
         v-show="open"
         class="tw-absolute tw-z-50 tw-mt-2 tw-rounded-md tw-shadow-lg"
         :class="[widthClass, alignmentClasses]"
         style="display: none"
-        @click="open = false"
-      >
+        @click="open = false">
         <div
           class="tw-rounded-md tw-ring-1 tw-ring-black tw-ring-opacity-5"
-          :class="contentClasses"
-        >
+          :class="contentClasses">
           <slot name="content" />
         </div>
       </div>

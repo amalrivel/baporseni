@@ -36,8 +36,7 @@ const submit = () => {
           v-model="form.name"
           required
           autofocus
-          autocomplete="name"
-        />
+          autocomplete="name" />
 
         <InputError class="mt-2" :message="form.errors.name" />
       </div>
@@ -51,8 +50,7 @@ const submit = () => {
           class="mt-1 block w-full"
           v-model="form.email"
           required
-          autocomplete="username"
-        />
+          autocomplete="username" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -66,8 +64,7 @@ const submit = () => {
           class="mt-1 block w-full"
           v-model="form.password"
           required
-          autocomplete="new-password"
-        />
+          autocomplete="new-password" />
 
         <InputError class="mt-2" :message="form.errors.password" />
       </div>
@@ -81,8 +78,7 @@ const submit = () => {
           class="mt-1 block w-full"
           v-model="form.password_confirmation"
           required
-          autocomplete="new-password"
-        />
+          autocomplete="new-password" />
 
         <InputError class="mt-2" :message="form.errors.password_confirmation" />
       </div>
@@ -90,16 +86,14 @@ const submit = () => {
       <div class="mt-4 flex items-center justify-end">
         <Link
           :href="route('login')"
-          class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-        >
+          class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
           Already registered?
         </Link>
 
         <PrimaryButton
           class="ml-4"
           :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+          :disabled="form.processing">
           Register
         </PrimaryButton>
       </div>

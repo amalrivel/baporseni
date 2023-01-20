@@ -53,8 +53,7 @@ const updatePassword = () => {
           v-model="form.current_password"
           type="password"
           class="mt-1 block w-full"
-          autocomplete="current-password"
-        />
+          autocomplete="current-password" />
 
         <InputError :message="form.errors.current_password" class="mt-2" />
       </div>
@@ -68,8 +67,7 @@ const updatePassword = () => {
           v-model="form.password"
           type="password"
           class="mt-1 block w-full"
-          autocomplete="new-password"
-        />
+          autocomplete="new-password" />
 
         <InputError :message="form.errors.password" class="mt-2" />
       </div>
@@ -82,8 +80,7 @@ const updatePassword = () => {
           v-model="form.password_confirmation"
           type="password"
           class="mt-1 block w-full"
-          autocomplete="new-password"
-        />
+          autocomplete="new-password" />
 
         <InputError :message="form.errors.password_confirmation" class="mt-2" />
       </div>
@@ -94,8 +91,7 @@ const updatePassword = () => {
         <Transition
           enter-from-class="opacity-0"
           leave-to-class="opacity-0"
-          class="transition ease-in-out"
-        >
+          class="transition ease-in-out">
           <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">
             Saved.
           </p>

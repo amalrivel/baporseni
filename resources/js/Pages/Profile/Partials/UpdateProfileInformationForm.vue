@@ -30,8 +30,7 @@ const form = useForm({
 
     <form
       @submit.prevent="form.patch(route('profile.update'))"
-      class="mt-6 space-y-6"
-    >
+      class="mt-6 space-y-6">
       <div>
         <InputLabel for="name" value="Name" />
 
@@ -42,8 +41,7 @@ const form = useForm({
           v-model="form.name"
           required
           autofocus
-          autocomplete="name"
-        />
+          autocomplete="name" />
 
         <InputError class="mt-2" :message="form.errors.name" />
       </div>
@@ -57,8 +55,7 @@ const form = useForm({
           class="mt-1 block w-full"
           v-model="form.email"
           required
-          autocomplete="email"
-        />
+          autocomplete="email" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -70,16 +67,14 @@ const form = useForm({
             :href="route('verification.send')"
             method="post"
             as="button"
-            class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          >
+            class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
             Click here to re-send the verification email.
           </Link>
         </p>
 
         <div
           v-show="props.status === 'verification-link-sent'"
-          class="mt-2 text-sm font-medium text-green-600"
-        >
+          class="mt-2 text-sm font-medium text-green-600">
           A new verification link has been sent to your email address.
         </div>
       </div>
@@ -90,8 +85,7 @@ const form = useForm({
         <Transition
           enter-from-class="opacity-0"
           leave-to-class="opacity-0"
-          class="transition ease-in-out"
-        >
+          class="transition ease-in-out">
           <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">
             Saved.
           </p>

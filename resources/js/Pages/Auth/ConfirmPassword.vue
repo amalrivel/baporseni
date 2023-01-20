@@ -36,8 +36,7 @@ const submit = () => {
           v-model="form.password"
           required
           autocomplete="current-password"
-          autofocus
-        />
+          autofocus />
         <InputError class="mt-2" :message="form.errors.password" />
       </div>
 
@@ -45,8 +44,7 @@ const submit = () => {
         <PrimaryButton
           class="ml-4"
           :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+          :disabled="form.processing">
           Confirm
         </PrimaryButton>
       </div>

@@ -11,8 +11,7 @@
         <div
           v-if="$page.props.flash.message"
           class="mb-4 bg-green-100 p-4 text-sm text-green-700 dark:bg-green-200 dark:text-green-800 sm:rounded-lg"
-          role="alert"
-        >
+          role="alert">
           <span class="font-medium">
             {{ $page.props.flash.message }}
           </span>
@@ -20,16 +19,14 @@
 
         <Link
           :href="route('dashboard.posts.create')"
-          class="mx-4 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900 sm:mx-0"
-        >
+          class="mx-4 inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900 sm:mx-0">
           Create
         </Link>
 
         <div
           v-for="post in posts"
           :key="post.id"
-          class="overflow-hidden bg-white p-4 shadow sm:rounded-lg sm:p-8"
-        >
+          class="overflow-hidden bg-white p-4 shadow sm:rounded-lg sm:p-8">
           <Link :href="route('dashboard.posts.show', post.slug)">
             <h2 className="text-lg font-medium text-gray-900">
               Title : {{ post.title }}
@@ -48,14 +45,12 @@
           <div class="flex justify-end gap-4">
             <Link
               :href="route('dashboard.posts.edit', post.slug)"
-              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900"
-            >
+              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900">
               Edit
             </Link>
             <button
               @click="destroy(post.slug)"
-              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900"
-            >
+              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900">
               Delete
             </button>
           </div>

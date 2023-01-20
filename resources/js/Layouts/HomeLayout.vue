@@ -7,18 +7,18 @@
           <li><Link href="/">Beranda</Link></li>
           <li><Link :href="route('profil')">Profil</Link></li>
           <li><Link :href="route('cabangKegiatan')">Cabang Kegiatan</Link></li>
-          <li><Link>Artikel</Link></li>
-          <li><Link>Kontak</Link></li>
+          <li><Link :href="route('artikel')">Artikel</Link></li>
+          <li><Link :href="route('kontak')">Kontak</Link></li>
         </ul>
       </div>
     </header>
     <main class="tw-flex tw-flex-col tw-gap-8">
       <slot />
     </main>
+    <v-divider></v-divider>
     <footer class="tw-mt-auto">
       <div
-        class="tw-container tw-mx-auto tw-flex tw-flex-col tw-items-center tw-gap-4 tw-p-4"
-      >
+        class="tw-container tw-mx-auto tw-flex tw-flex-col tw-items-center tw-gap-4 tw-p-4">
         <div class="tw-flex tw-gap-4">
           <h1>IMG</h1>
           <h2>Baporseni</h2>
@@ -27,7 +27,9 @@
           <li><Link href="/">Beranda</Link></li>
           <li><Link :href="route('profil')">Profil</Link></li>
           <li><Link :href="route('cabangKegiatan')">Cabang Kegiatan</Link></li>
-          <li><Link>Kontak</Link></li>
+          <li><Link :href="route('artikel')">Artikel</Link></li>
+          <li><Link :href="route('kontak')">Kontak</Link></li>
+          <li><Link :href="route('login')">Punya Hak Akses?</Link></li>
         </ul>
         <p>Copyright © 2023 Timah-Baporseni ∙ All the rights reserved.</p>
       </div>

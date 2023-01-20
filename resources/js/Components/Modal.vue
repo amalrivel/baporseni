@@ -65,21 +65,18 @@ const maxWidthClass = computed(() => {
       <div
         v-show="show"
         class="tw-fixed tw-inset-0 tw-z-50 tw-overflow-y-auto tw-px-4 tw-py-6 sm:tw-px-0"
-        scroll-region
-      >
+        scroll-region>
         <transition
           enter-active-class="tw-ease-out tw-duration-300"
           enter-from-class="tw-opacity-0"
           enter-to-class="tw-opacity-100"
           leave-active-class="tw-ease-in tw-duration-200"
           leave-from-class="tw-opacity-100"
-          leave-to-class="tw-opacity-0"
-        >
+          leave-to-class="tw-opacity-0">
           <div
             v-show="show"
             class="tw-fixed tw-inset-0 tw-transform tw-transition-all"
-            @click="close"
-          >
+            @click="close">
             <div class="tw-absolute tw-inset-0 tw-bg-gray-500 tw-opacity-75" />
           </div>
         </transition>
@@ -90,13 +87,11 @@ const maxWidthClass = computed(() => {
           enter-to-class="tw-opacity-100 tw-translate-y-0 sm:tw-scale-100"
           leave-active-class="tw-ease-in tw-duration-200"
           leave-from-class="tw-opacity-100 tw-translate-y-0 sm:tw-scale-100"
-          leave-to-class="tw-opacity-0 tw-translate-y-4 sm:tw-translate-y-0 sm:tw-scale-95"
-        >
+          leave-to-class="tw-opacity-0 tw-translate-y-4 sm:tw-translate-y-0 sm:tw-scale-95">
           <div
             v-show="show"
             class="tw-mb-6 tw-transform tw-overflow-hidden tw-rounded-lg tw-bg-white tw-shadow-xl tw-transition-all sm:tw-mx-auto sm:tw-w-full"
-            :class="maxWidthClass"
-          >
+            :class="maxWidthClass">
             <slot v-if="show" />
           </div>
         </transition>

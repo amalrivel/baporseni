@@ -22,25 +22,21 @@ const showingNavigationDropdown = ref(false);
               <div class="shrink-0 tw-flex tw-items-center">
                 <Link :href="route('dashboard')">
                   <ApplicationLogo
-                    class="tw-block tw-h-9 tw-w-auto tw-fill-current tw-text-gray-800"
-                  />
+                    class="tw-block tw-h-9 tw-w-auto tw-fill-current tw-text-gray-800" />
                 </Link>
               </div>
 
               <!-- Navigation Links -->
               <div
-                class="tw-hidden tw-space-x-8 sm:tw--my-px sm:tw-ml-10 sm:tw-flex"
-              >
+                class="tw-hidden tw-space-x-8 sm:tw--my-px sm:tw-ml-10 sm:tw-flex">
                 <NavLink
                   :href="route('dashboard')"
-                  :active="route().current('dashboard')"
-                >
+                  :active="route().current('dashboard')">
                   Dashboard
                 </NavLink>
                 <NavLink
                   :href="route('dashboard.posts.index')"
-                  :active="route().current('dashboard.posts.*')"
-                >
+                  :active="route().current('dashboard.posts.*')">
                   Post
                 </NavLink>
               </div>
@@ -54,21 +50,18 @@ const showingNavigationDropdown = ref(false);
                     <span class="tw-inline-flex tw-rounded-md">
                       <button
                         type="button"
-                        class="tw-inline-flex tw-items-center tw-rounded-md tw-border tw-border-transparent tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-leading-4 tw-text-gray-500 tw-transition tw-duration-150 tw-ease-in-out hover:tw-text-gray-700 focus:tw-outline-none"
-                      >
+                        class="tw-inline-flex tw-items-center tw-rounded-md tw-border tw-border-transparent tw-bg-white tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-leading-4 tw-text-gray-500 tw-transition tw-duration-150 tw-ease-in-out hover:tw-text-gray-700 focus:tw-outline-none">
                         {{ $page.props.auth.user.name }}
 
                         <svg
                           class="tw-ml-2 tw--mr-0.5 tw-h-4 tw-w-4"
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
+                          fill="currentColor">
                           <path
                             fill-rule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          />
+                            clip-rule="evenodd" />
                         </svg>
                       </button>
                     </span>
@@ -81,8 +74,7 @@ const showingNavigationDropdown = ref(false);
                     <DropdownLink
                       :href="route('logout')"
                       method="post"
-                      as="button"
-                    >
+                      as="button">
                       Log Out
                     </DropdownLink>
                   </template>
@@ -94,14 +86,12 @@ const showingNavigationDropdown = ref(false);
             <div class="tw--mr-2 tw-flex tw-items-center sm:tw-hidden">
               <button
                 @click="showingNavigationDropdown = !showingNavigationDropdown"
-                class="tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-p-2 tw-text-gray-400 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-100 hover:tw-text-gray-500 focus:tw-bg-gray-100 focus:tw-text-gray-500 focus:tw-outline-none"
-              >
+                class="tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-p-2 tw-text-gray-400 tw-transition tw-duration-150 tw-ease-in-out hover:tw-bg-gray-100 hover:tw-text-gray-500 focus:tw-bg-gray-100 focus:tw-text-gray-500 focus:tw-outline-none">
                 <svg
                   class="tw-h-6 tw-w-6"
                   stroke="currentColor"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     :class="{
                       'tw-hidden': showingNavigationDropdown,
@@ -110,8 +100,7 @@ const showingNavigationDropdown = ref(false);
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                    d="M4 6h16M4 12h16M4 18h16" />
                   <path
                     :class="{
                       'tw-hidden': !showingNavigationDropdown,
@@ -120,8 +109,7 @@ const showingNavigationDropdown = ref(false);
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                    d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
@@ -134,19 +122,16 @@ const showingNavigationDropdown = ref(false);
             'tw-block': showingNavigationDropdown,
             'tw-hidden': !showingNavigationDropdown,
           }"
-          class="sm:tw-hidden"
-        >
+          class="sm:tw-hidden">
           <div class="tw-space-y-1 tw-pt-2 tw-pb-3">
             <ResponsiveNavLink
               :href="route('dashboard')"
-              :active="route().current('dashboard')"
-            >
+              :active="route().current('dashboard')">
               Dashboard
             </ResponsiveNavLink>
             <ResponsiveNavLink
               :href="route('dashboard.posts.index')"
-              :active="route().current('dashboard.posts.*')"
-            >
+              :active="route().current('dashboard.posts.*')">
               Post
             </ResponsiveNavLink>
           </div>
@@ -169,8 +154,7 @@ const showingNavigationDropdown = ref(false);
               <ResponsiveNavLink
                 :href="route('logout')"
                 method="post"
-                as="button"
-              >
+                as="button">
                 Log Out
               </ResponsiveNavLink>
             </div>
@@ -181,8 +165,7 @@ const showingNavigationDropdown = ref(false);
       <!-- Page Heading -->
       <header class="tw-bg-white tw-shadow" v-if="$slots.header">
         <div
-          class="tw-mx-auto tw-max-w-7xl tw-py-6 tw-px-4 sm:tw-px-6 lg:tw-px-8"
-        >
+          class="tw-mx-auto tw-max-w-7xl tw-py-6 tw-px-4 sm:tw-px-6 lg:tw-px-8">
           <slot name="header" />
         </div>
       </header>

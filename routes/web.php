@@ -30,12 +30,27 @@ Route::get("/profil", function () {
     "phpVersion" => PHP_VERSION,
   ]);
 })->name("profil");
+
 Route::get("/cabang", function () {
   return Inertia::render("CabangKegiatan", [
     "laravelVersion" => Application::VERSION,
     "phpVersion" => PHP_VERSION,
   ]);
 })->name("cabangKegiatan");
+
+Route::get("/artikel", function () {
+  return Inertia::render("Artikel", [
+    "laravelVersion" => Application::VERSION,
+    "phpVersion" => PHP_VERSION,
+  ]);
+})->name("artikel");
+
+Route::get("/kontak", function () {
+  return Inertia::render("Kontak", [
+    "laravelVersion" => Application::VERSION,
+    "phpVersion" => PHP_VERSION,
+  ]);
+})->name("kontak");
 
 Route::get("/dashboard", function () {
   return Inertia::render("Dashboard");

@@ -31,8 +31,7 @@ const verificationLinkSent = computed(
 
     <div
       class="mb-4 text-sm font-medium text-green-600"
-      v-if="verificationLinkSent"
-    >
+      v-if="verificationLinkSent">
       A new verification link has been sent to the email address you provided
       during registration.
     </div>
@@ -41,8 +40,7 @@ const verificationLinkSent = computed(
       <div class="mt-4 flex items-center justify-between">
         <PrimaryButton
           :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+          :disabled="form.processing">
           Resend Verification Email
         </PrimaryButton>
 

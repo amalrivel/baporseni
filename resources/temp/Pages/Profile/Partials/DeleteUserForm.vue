@@ -73,8 +73,7 @@ const closeModal = () => {
             type="password"
             class="mt-1 block w-3/4"
             placeholder="Password"
-            @keyup.enter="deleteUser"
-          />
+            @keyup.enter="deleteUser" />
 
           <InputError :message="form.errors.password" class="mt-2" />
         </div>
@@ -86,8 +85,7 @@ const closeModal = () => {
             class="ml-3"
             :class="{ 'opacity-25': form.processing }"
             :disabled="form.processing"
-            @click="deleteUser"
-          >
+            @click="deleteUser">
             Delete Account
           </DangerButton>
         </div>

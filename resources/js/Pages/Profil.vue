@@ -9,8 +9,7 @@
       </v-breadcrumbs>
     </div>
     <div
-      class="tw-container tw-mx-auto -tw-mt-8 tw-flex tw-flex-col tw-gap-4 tw-p-4"
-    >
+      class="tw-container tw-mx-auto -tw-mt-8 tw-flex tw-flex-col tw-gap-4 tw-p-4">
       <h2>Logo Kami</h2>
       <div class="tw-flex tw-flex-wrap tw-gap-4 sm:tw-flex-nowrap">
         <h2>IMG</h2>
@@ -41,18 +40,15 @@
           v-for="(year, i) in years"
           :key="i"
           :dot-color="year.color"
-          size="small"
-        >
+          size="small">
           <template v-slot:opposite>
             <div
               :class="`pt-1 headline font-weight-bold text-${year.color}`"
-              v-text="year.year"
-            ></div>
+              v-text="year.year"></div>
           </template>
           <div>
             <h2
-              :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`"
-            >
+              :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`">
               Lorem ipsum
             </h2>
             <div>
@@ -66,8 +62,7 @@
       </v-timeline>
     </div>
     <div
-      class="tw-container tw-mx-auto tw-mt-4 tw-flex tw-flex-col tw-gap-4 tw-p-4"
-    >
+      class="tw-container tw-mx-auto tw-mt-4 tw-flex tw-flex-col tw-gap-4 tw-p-4">
       <h2>Bagan Struktur Organisasi</h2>
       <img src="https://picsum.photos/1600" alt="https://picsum.photos/200" />
     </div>

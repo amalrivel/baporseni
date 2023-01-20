@@ -12,8 +12,7 @@
     </v-carousel>
     <div class="tw-bg-slate-100">
       <div
-        class="tw-container tw-mx-auto tw-my-4 tw-flex tw-flex-col tw-bg-white tw-p-4 sm:tw-rounded-lg"
-      >
+        class="tw-container tw-mx-auto tw-my-4 tw-flex tw-flex-col tw-bg-white tw-p-4 sm:tw-rounded-lg">
         <h2>Berita Terkini</h2>
 
         <div class="tw-grid tw-grid-rows-3 tw-gap-4 sm:tw-grid-cols-3">
@@ -34,8 +33,7 @@
           <div
             v-for="n in 4"
             :key="n"
-            class="tw-flex tw-flex-col tw-justify-between"
-          >
+            class="tw-flex tw-flex-col tw-justify-between">
             <v-img src="https://picsum.photos/800/600" cover></v-img>
             <h3>Judul</h3>
             <p class="tw-text-sm tw-text-slate-700">Waktu, hari tanggal</p>

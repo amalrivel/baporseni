@@ -44,8 +44,7 @@ const submit = () => {
           v-model="form.email"
           required
           autofocus
-          autocomplete="username"
-        />
+          autocomplete="username" />
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
@@ -53,8 +52,7 @@ const submit = () => {
       <div class="mt-4 flex items-center justify-end">
         <PrimaryButton
           :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+          :disabled="form.processing">
           Email Password Reset Link
         </PrimaryButton>
       </div>

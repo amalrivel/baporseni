@@ -1,19 +1,27 @@
 <template>
   <Head title="Profile" />
   <HomeLayout>
-    <div class="tw-container tw-mx-auto">
-      <v-breadcrumbs :items="items">
-        <template v-slot:prepend>
-          <v-icon size="small" icon="mdi-vuetify"></v-icon>
-        </template>
-      </v-breadcrumbs>
+    <div class="tw-mx-auto tw-h-full tw-w-full 2xl:tw-container">
+      <v-img
+        src="https://picsum.photos/1009"
+        height="150"
+        class="tw-z-0"
+        gradient="to top,rgba(0,0,0,.5),rgba(225,225,225,.1)"
+        cover>
+        <div
+          class="tw-container tw-mx-auto tw-flex tw-h-full tw-items-end tw-p-4">
+          <h1 class="tw-text-white">Profil</h1>
+        </div>
+      </v-img>
     </div>
-    <div
-      class="tw-container tw-mx-auto -tw-mt-8 tw-flex tw-flex-col tw-gap-4 tw-p-4">
+
+    <div class="tw-container tw-mx-auto tw-flex tw-flex-col tw-gap-4 tw-p-4">
       <h2>Logo Kami</h2>
-      <div class="tw-flex tw-flex-wrap tw-gap-4 sm:tw-flex-nowrap">
-        <h2>IMG</h2>
-        <div class="flex">
+      <div class="tw-grid tw-grid-cols-9 tw-gap-4">
+        <img
+          class="tw-col-span-9 sm:tw-col-span-3"
+          src="https://picsum.photos/1001" />
+        <div class="tw-col-span-9 sm:tw-col-span-6">
           <h3>Makna Logo, Arti Warna Logo, dan Bentuk Huruf (Typeface) Logo</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
@@ -33,8 +41,92 @@
         </div>
       </div>
     </div>
+    <!-- <v-img src="https://picsum.photos/1009"></v-img> -->
+    <div class="tw-container tw-mx-auto tw-flex tw-flex-col tw-gap-4 tw-p-4">
+      <h2>Tugas dan Fungsi</h2>
+
+      <div class="tw-flex tw-flex-row">
+        <v-tabs
+          v-model="tab"
+          direction="vertical"
+          color="primary"
+          class="!tw-overflow-visible">
+          <v-tab value="option-1"> Tugas </v-tab>
+          <v-tab value="option-2"> Fungsi </v-tab>
+        </v-tabs>
+        <v-window v-model="tab">
+          <v-window-item value="option-1">
+            <v-card flat>
+              <v-card-text>
+                <p>
+                  Sed aliquam ultrices mauris. Donec posuere vulputate arcu.
+                  Morbi ac felis. Etiam feugiat lorem non metus. Sed a libero.
+                </p>
+
+                <p>
+                  Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel,
+                  lacus. Aenean tellus metus, bibendum sed, posuere ac, mattis
+                  non, nunc. Aliquam lobortis. Aliquam lobortis. Suspendisse non
+                  nisl sit amet velit hendrerit rutrum.
+                </p>
+
+                <p class="mb-0">
+                  Phasellus dolor. Fusce neque. Fusce fermentum odio nec arcu.
+                  Pellentesque libero tortor, tincidunt et, tincidunt eget,
+                  semper nec, quam. Phasellus blandit leo ut odio.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-window-item>
+          <v-window-item value="option-2">
+            <v-card flat>
+              <v-card-text>
+                <p>
+                  Morbi nec metus. Suspendisse faucibus, nunc et pellentesque
+                  egestas, lacus ante convallis tellus, vitae iaculis lacus elit
+                  id tortor. Sed mollis, eros et ultrices tempus, mauris ipsum
+                  aliquam libero, non adipiscing dolor urna a orci. Curabitur
+                  ligula sapien, tincidunt non, euismod vitae, posuere
+                  imperdiet, leo. Nunc sed turpis.
+                </p>
+
+                <p>
+                  Suspendisse feugiat. Suspendisse faucibus, nunc et
+                  pellentesque egestas, lacus ante convallis tellus, vitae
+                  iaculis lacus elit id tortor. Proin viverra, ligula sit amet
+                  ultrices semper, ligula arcu tristique sapien, a accumsan nisi
+                  mauris ac eros. In hac habitasse platea dictumst. Fusce ac
+                  felis sit amet ligula pharetra condimentum.
+                </p>
+
+                <p>
+                  Sed consequat, leo eget bibendum sodales, augue velit cursus
+                  nunc, quis gravida magna mi a libero. Nam commodo suscipit
+                  quam. In consectetuer turpis ut velit. Sed cursus turpis vitae
+                  tortor. Aliquam eu nunc.
+                </p>
+
+                <p>
+                  Etiam ut purus mattis mauris sodales aliquam. Ut varius
+                  tincidunt libero. Aenean viverra rhoncus pede. Duis leo. Fusce
+                  fermentum odio nec arcu.
+                </p>
+
+                <p class="mb-0">
+                  Donec venenatis vulputate lorem. Aenean viverra rhoncus pede.
+                  In dui magna, posuere eget, vestibulum et, tempor auctor,
+                  justo. Fusce commodo aliquam arcu. Suspendisse enim turpis,
+                  dictum sed, iaculis a, condimentum nec, nisi.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-window-item>
+        </v-window>
+      </div>
+    </div>
+
     <div class="tw-container tw-mx-auto tw-px-4">
-      <h2>Perjalanan Kami</h2>
+      <h2>Sejarah Singkat Baporseni</h2>
       <v-timeline align="start">
         <v-timeline-item
           v-for="(year, i) in years"
@@ -79,6 +171,8 @@ export default {
     HomeLayout,
   },
   data: () => ({
+    tab: "option-1",
+    aspectRatio: 16 / 9,
     items: [
       {
         title: "Dashboard",

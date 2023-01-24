@@ -94,9 +94,9 @@
               eros eu, finibus commodo urna. Vivamus accumsan viverra imperdiet.
             </p>
           </v-img>
-          <v-btn variant="outlined" class=" tw-col-span-2 sm:tw-col-span-3">
-            Selengkapnya
-          </v-btn>
+          <Link :href="route('artikel')" class="tw-col-span-2 sm:tw-col-span-3">
+            <v-btn variant="outlined" class="tw-w-full"> Selengkapnya </v-btn>
+          </Link>
         </div>
       </div>
       <v-parallax
@@ -146,6 +146,7 @@ export default {
   components: {
     Head,
     HomeLayout,
+    Link,
   },
   data() {
     return {

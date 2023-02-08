@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,12 +18,14 @@ use Inertia\Inertia;
 |
 */
 
-Route::get("/", function () {
-  return Inertia::render("Home", [
-    "laravelVersion" => Application::VERSION,
-    "phpVersion" => PHP_VERSION,
-  ]);
-});
+Route::get("/", [HomeController::class, "beranda"]);
+
+// Route::get("/", function () {
+//   return Inertia::render("Home", [
+//     "laravelVersion" => Application::VERSION,
+//     "phpVersion" => PHP_VERSION,
+//   ]);
+// });
 
 Route::get("/profil", function () {
   return Inertia::render("Profil", [

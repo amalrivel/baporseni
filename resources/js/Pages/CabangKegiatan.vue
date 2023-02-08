@@ -14,7 +14,8 @@
         </div>
       </v-img>
     </div>
-    <div class="tw-container tw-mx-auto tw-grid tw-grid-cols-2 tw-gap-4 tw-p-4">
+    <div
+      class="tw-container tw-mx-auto tw-grid tw-grid-cols-1 tw-gap-4 tw-p-4 sm:tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4">
       <!-- <div class="tw-container tw-mx-auto tw-flex  tw-flex-wrap tw-gap-4 tw-p-4"> -->
       <ExpansionCard v-for="n in 10" :key="n" />
     </div>

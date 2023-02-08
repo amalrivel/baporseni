@@ -1,14 +1,20 @@
 <template>
   <Head title="Baporseni" />
   <HomeLayout
-    ><div class="tw-container tw-mx-auto">
-      <v-breadcrumbs :items="items">
-        <template v-slot:prepend>
-          <v-icon size="small" icon="mdi-vuetify"></v-icon>
-        </template>
-      </v-breadcrumbs>
+    ><div class="tw-mx-auto tw-h-full tw-w-full 2xl:tw-container">
+      <v-img
+        src="https://picsum.photos/1009"
+        height="150"
+        class="tw-z-0"
+        gradient="to top,rgba(0,0,0,.5),rgba(225,225,225,.1)"
+        cover>
+        <div
+          class="tw-container tw-mx-auto tw-flex tw-h-full tw-items-end tw-p-4">
+          <h1 class="tw-text-white">Kontak</h1>
+        </div>
+      </v-img>
     </div>
-    <div class="tw-container tw-mx-auto -tw-mt-8 tw-p-4">
+    <div class="tw-container tw-mx-auto tw-p-4">
       <v-form ref="form" v-model="valid">
         <div class="tw-grid tw-gap-4 sm:tw-grid-cols-3">
           <v-text-field

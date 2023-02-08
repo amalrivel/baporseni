@@ -26,7 +26,7 @@
         <header class="tw-sticky tw-top-0 tw-z-50 tw-bg-white tw-shadow">
           <div class="tw-container tw-mx-auto tw-flex tw-p-4">
             <h1 class="tw-mr-auto tw-flex tw-items-center">
-              <Link href="/"> Baposerni </Link>
+              <Link href="/"> Baporseni </Link>
             </h1>
             <ul
               class="tw-hidden tw-items-center tw-justify-end tw-gap-8 sm:tw-flex">
@@ -41,7 +41,7 @@
             <div class="tw-block sm:tw-hidden">
               <v-app-bar-nav-icon
                 variant="text"
-                @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                @click.stop="drawer = !drawer" />
             </div>
           </div>
         </header>

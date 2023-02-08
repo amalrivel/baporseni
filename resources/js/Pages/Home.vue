@@ -8,9 +8,9 @@
       show-arrows="hover"
       class="tw-mx-auto tw-h-[400px] sm:tw-h-[600px] 2xl:tw-container">
       <v-carousel-item
-        v-for="(slide, i) in slides"
-        :key="i"
-        :src="`https://picsum.photos/120${i}`"
+        v-for="(item, index) in carousel"
+        :key="index"
+        :src="item.image"
         cover
         :gradient="`to left bottom, rgba(${Math.floor(
           Math.random() * 256
@@ -22,7 +22,7 @@
         <!-- <div class="d-flex fill-height justify-center align-center"> -->
         <div
           class="tw-flex tw-h-full tw-flex-col tw-items-start tw-justify-end tw-p-4 sm:tw-p-16">
-          <h1 class="tw-text-white">{{ slide }} Slide</h1>
+          <h1 class="tw-text-white">{{ index + 1 }}. {{ item.title }}</h1>
         </div>
       </v-carousel-item>
     </v-carousel>
@@ -33,7 +33,7 @@
         <div class="tw-mt-4 tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3">
           <div class="tw-col-span-2 tw-rounded">
             <v-img
-              src="https://picsum.photos/3000"
+              :src="posts[0].image"
               alt=""
               :aspect-ratio="aspectRatio"
               :gradient="`to left bottom, rgba(${Math.floor(
@@ -45,28 +45,18 @@
               )},${Math.floor(Math.random() * 256)},.5)`"
               class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
               cover>
-              <h2 class="tw-text-justify tw-text-white">Jdullll</h2>
+              <h2 class="tw-text-white">
+                {{ posts[0].title }}
+              </h2>
               <p class="tw-truncate tw-text-justify tw-text-white">
-                Nunc sodales massa vel auctor accumsan. Quisque felis mauris,
-                maximus rutrum orci id, posuere tristique enim. Etiam dapibus,
-                dui in convallis semper, erat purus dignissim ex, id laoreet
-                justo nisi vitae turpis. Nam laoreet eros est, venenatis
-                tincidunt purus ornare hendrerit. Nullam venenatis dui urna,
-                placerat congue risus eleifend a. Vestibulum pulvinar mi et
-                dignissim accumsan. Nam volutpat libero et purus tincidunt
-                interdum. Etiam aliquet augue vel tellus laoreet, et viverra
-                massa semper. Donec interdum et neque nec varius. Phasellus
-                volutpat semper maximus. Aliquam sit amet nisl lacinia, commodo
-                elit ultricies, pretium mi. Sed congue leo nibh, a tempus mi
-                blandit sit amet. Nunc nisi nibh, pretium ac eros eu, finibus
-                commodo urna. Vivamus accumsan viverra imperdiet.
+                {{ posts[0].excerpt }}
               </p>
             </v-img>
           </div>
           <v-img
-            v-for="repetion in repetions"
-            :key="repetion"
-            :src="`https://picsum.photos/300${repetion}`"
+            v-for="(item, index) in posts"
+            :key="index"
+            :src="item.image"
             alt=""
             :aspect-ratio="aspectRatio"
             :gradient="`to left bottom, rgba(${Math.floor(
@@ -78,20 +68,9 @@
             )},${Math.floor(Math.random() * 256)},.5)`"
             class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
             cover>
-            <h2 class="tw-text-justify tw-text-white">Jdullll</h2>
+            <h2 class="tw-text-white">{{ item.title }}</h2>
             <p class="tw-truncate tw-text-justify tw-text-white">
-              Nunc sodales massa vel auctor accumsan. Quisque felis mauris,
-              maximus rutrum orci id, posuere tristique enim. Etiam dapibus, dui
-              in convallis semper, erat purus dignissim ex, id laoreet justo
-              nisi vitae turpis. Nam laoreet eros est, venenatis tincidunt purus
-              ornare hendrerit. Nullam venenatis dui urna, placerat congue risus
-              eleifend a. Vestibulum pulvinar mi et dignissim accumsan. Nam
-              volutpat libero et purus tincidunt interdum. Etiam aliquet augue
-              vel tellus laoreet, et viverra massa semper. Donec interdum et
-              neque nec varius. Phasellus volutpat semper maximus. Aliquam sit
-              amet nisl lacinia, commodo elit ultricies, pretium mi. Sed congue
-              leo nibh, a tempus mi blandit sit amet. Nunc nisi nibh, pretium ac
-              eros eu, finibus commodo urna. Vivamus accumsan viverra imperdiet.
+              {{ item.excerpt }}
             </p>
           </v-img>
           <Link :href="route('artikel')" class="tw-col-span-2 sm:tw-col-span-3">
@@ -116,9 +95,9 @@
         <h2>Cabang Olahraga Seni</h2>
         <div
           class="grid tw-col-span-1 tw-mt-4 tw-grid tw-gap-4 sm:tw-grid-cols-2 md:tw-grid-cols-3">
-          <v-card v-for="n in 6" :key="n">
+          <v-card v-for="(item, index) in categories" :key="index">
             <v-img
-              :src="`https://picsum.photos/100${n}`"
+              :src="item.image"
               class="align-end"
               :gradient="`to left bottom, rgba(${Math.floor(
                 Math.random() * 256
@@ -129,7 +108,7 @@
               )},${Math.floor(Math.random() * 256)},.5)`"
               height="200px"
               cover>
-              <v-card-title class="text-white">Pre-fab homes</v-card-title>
+              <v-card-title class="text-white">{{ item.name }}</v-card-title>
             </v-img>
           </v-card>
         </div>
@@ -148,6 +127,11 @@ export default {
     HomeLayout,
     Link,
   },
+  props: {
+    carousel: Object,
+    posts: Object,
+    categories: Object,
+  },
   data() {
     return {
       aspectRatio: 16 / 9,
@@ -161,6 +145,10 @@ export default {
       slides: ["First", "Second", "Third", "Fourth", "Fifth"],
       repetions: [0, 1, 2, 3],
     };
+  },
+
+  mounted() {
+    // console.log(this.carousel[1].title);
   },
 };
 </script>

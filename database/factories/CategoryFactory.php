@@ -20,6 +20,11 @@ class CategoryFactory extends Factory
     $faker = Faker::create("ja_JP");
     return [
       "name" => $faker->kanaName,
+      "r" => mt_rand(0, 255),
+      "g" => mt_rand(0, 255),
+      "b" => mt_rand(0, 255),
+      "a" => mt_rand(0, 100) / 300,
+      "image" => "https://picsum.photos/" . strval(mt_rand(1000, 2000)),
     ];
   }
 }

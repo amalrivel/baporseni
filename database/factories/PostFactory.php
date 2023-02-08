@@ -29,6 +29,9 @@ class PostFactory extends Factory
       //     ->map(fn ($p) => "<p>$p</p>")
       //     ->implode(''),
       // 'body' => '<script>alert("haha");</script>',
+      "image" => "https://picsum.photos/" . strval(mt_rand(1000, 2000)),
+      "is_delete" => $this->faker->boolean(),
+      "at_carousel" => $this->faker->boolean(),
       "user_id" => mt_rand(1, 10),
       "category_id" => mt_rand(1, 20),
     ];

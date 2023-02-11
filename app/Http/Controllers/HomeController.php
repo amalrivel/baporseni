@@ -15,8 +15,7 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-  public function beranda()
-  {
+  public function beranda(){
     $carousel = Post::latest()
       ->with("category")
       ->where("at_carousel", 1)
@@ -39,4 +38,9 @@ class HomeController extends Controller
       "categories" => $categories,
     ]);
   }
+
+  public function profil(){
+
+  }
+
 }

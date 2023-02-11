@@ -12,13 +12,17 @@
         :key="index"
         :src="item.image"
         cover
-        :gradient="`to left bottom, rgba(${Math.floor(
-          Math.random() * 256
-        )},${Math.floor(Math.random() * 256)},${Math.floor(
-          Math.random() * 256
-        )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
-          Math.random() * 256
-        )},${Math.floor(Math.random() * 256)},.5)`">
+        :gradient="`to left bottom,
+        rgba(
+            ${item.category.color1[0]},
+            ${item.category.color1[1]},
+            ${item.category.color1[2]},
+            ${item.category.color1[3]}),
+        rgba(
+            ${item.category.color2[0]},
+            ${item.category.color2[1]},
+            ${item.category.color2[2]},
+            ${item.category.color2[3]})`">
         <!-- <div class="d-flex fill-height justify-center align-center"> -->
         <div
           class="tw-flex tw-h-full tw-flex-col tw-items-start tw-justify-end tw-p-4 sm:tw-p-16">
@@ -36,13 +40,17 @@
               :src="posts[0].image"
               alt=""
               :aspect-ratio="aspectRatio"
-              :gradient="`to left bottom, rgba(${Math.floor(
-                Math.random() * 256
-              )},${Math.floor(Math.random() * 256)},${Math.floor(
-                Math.random() * 256
-              )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
-                Math.random() * 256
-              )},${Math.floor(Math.random() * 256)},.5)`"
+              :gradient="`to left bottom,
+        rgba(
+            ${posts[0].category.color1[0]},
+            ${posts[0].category.color1[1]},
+            ${posts[0].category.color1[2]},
+            ${posts[0].category.color1[3]}),
+        rgba(
+            ${posts[0].category.color2[0]},
+            ${posts[0].category.color2[1]},
+            ${posts[0].category.color2[2]},
+            ${posts[0].category.color2[3]})`"
               class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
               cover>
               <h2 class="tw-text-white">
@@ -59,13 +67,17 @@
             :src="item.image"
             alt=""
             :aspect-ratio="aspectRatio"
-            :gradient="`to left bottom, rgba(${Math.floor(
-              Math.random() * 256
-            )},${Math.floor(Math.random() * 256)},${Math.floor(
-              Math.random() * 256
-            )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
-              Math.random() * 256
-            )},${Math.floor(Math.random() * 256)},.5)`"
+            :gradient="`to left bottom,
+        rgba(
+            ${item.category.color1[0]},
+            ${item.category.color1[1]},
+            ${item.category.color1[2]},
+            ${item.category.color1[3]}),
+        rgba(
+            ${item.category.color2[0]},
+            ${item.category.color2[1]},
+            ${item.category.color2[2]},
+            ${item.category.color2[3]})`"
             class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
             cover>
             <h2 class="tw-text-white">{{ item.title }}</h2>
@@ -148,7 +160,7 @@ export default {
   },
 
   mounted() {
-    // console.log(this.carousel[1].title);
+    // console.log(this.posts);
   },
 };
 </script>

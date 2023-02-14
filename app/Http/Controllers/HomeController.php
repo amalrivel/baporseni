@@ -15,7 +15,8 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-  public function beranda(){
+  public function beranda()
+  {
     $carousel = Post::latest()
       ->with("category")
       ->where("at_carousel", 1)
@@ -25,7 +26,7 @@ class HomeController extends Controller
     $posts = Post::latest()
       ->with("category")
       ->where("is_delete", 0)
-      ->take(4)
+      ->take(5)
       ->get();
 
     $categories = Category::all();
@@ -39,8 +40,27 @@ class HomeController extends Controller
     ]);
   }
 
-  public function profil(){
-
+  public function profil()
+  {
+    return Inertia::render("Profil", []);
   }
+  public function cabang()
+  {
+    $categories = Category::all();
 
+    return Inertia::render("CabangKegiatan", [
+      "categories" => $categories,
+    ]);
+  }
+  public function artikel()
+  {
+    $posts = Post::latest()
+      ->with("category")
+      ->where("is_delete", 0)->paginate(9)
+      ;
+
+    return Inertia::render("Artikel", [
+      "posts" => $posts,
+    ]);
+  }
 }

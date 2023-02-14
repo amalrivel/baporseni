@@ -20,6 +20,7 @@ class CategoryFactory extends Factory
     $faker = Faker::create("ja_JP");
     return [
       "name" => $faker->kanaName,
+      "excerpt" => $this->faker->paragraph(),
       "color1" => [
         mt_rand(0, 255),
         mt_rand(0, 255),

@@ -32,71 +32,32 @@
         @click:append-inner="onClick"></v-text-field>
 
       <div class="tw-mt-4 tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3">
-        <div class="tw-col-span-2 tw-rounded">
-          <v-img
-            src="https://picsum.photos/3000"
-            alt=""
-            :aspect-ratio="aspectRatio"
-            :gradient="`to left bottom, rgba(${Math.floor(
-              Math.random() * 256
-            )},${Math.floor(Math.random() * 256)},${Math.floor(
-              Math.random() * 256
-            )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
-              Math.random() * 256
-            )},${Math.floor(Math.random() * 256)},.5)`"
-            class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
-            cover>
-            <h2 class="tw-text-justify tw-text-white">Jdullll</h2>
-            <p class="tw-truncate tw-text-justify tw-text-white">
-              Nunc sodales massa vel auctor accumsan. Quisque felis mauris,
-              maximus rutrum orci id, posuere tristique enim. Etiam dapibus, dui
-              in convallis semper, erat purus dignissim ex, id laoreet justo
-              nisi vitae turpis. Nam laoreet eros est, venenatis tincidunt purus
-              ornare hendrerit. Nullam venenatis dui urna, placerat congue risus
-              eleifend a. Vestibulum pulvinar mi et dignissim accumsan. Nam
-              volutpat libero et purus tincidunt interdum. Etiam aliquet augue
-              vel tellus laoreet, et viverra massa semper. Donec interdum et
-              neque nec varius. Phasellus volutpat semper maximus. Aliquam sit
-              amet nisl lacinia, commodo elit ultricies, pretium mi. Sed congue
-              leo nibh, a tempus mi blandit sit amet. Nunc nisi nibh, pretium ac
-              eros eu, finibus commodo urna. Vivamus accumsan viverra imperdiet.
-            </p>
-          </v-img>
-        </div>
+
         <v-img
-          v-for="repetion in repetions"
-          :key="repetion"
-          :src="`https://picsum.photos/300${repetion}`"
+        v-for="(item, index) in posts.data"
+            :key="index"
+            :src="item.image"
           alt=""
           :aspect-ratio="aspectRatio"
-          :gradient="`to left bottom, rgba(${Math.floor(
-            Math.random() * 256
-          )},${Math.floor(Math.random() * 256)},${Math.floor(
-            Math.random() * 256
-          )},.1), rgba(${Math.floor(Math.random() * 256)},${Math.floor(
-            Math.random() * 256
-          )},${Math.floor(Math.random() * 256)},.5)`"
+          :gradient="`to left bottom,
+        rgba(
+            ${item.category.color1[0]},
+            ${item.category.color1[1]},
+            ${item.category.color1[2]},
+            ${item.category.color1[3]}),
+        rgba(
+            ${item.category.color2[0]},
+            ${item.category.color2[1]},
+            ${item.category.color2[2]},
+            ${item.category.color2[3]})`"
           class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
           cover>
-          <h2 class="tw-text-justify tw-text-white">Jdullll</h2>
+          <h2 class=" tw-text-white">{{ item.title }}</h2>
           <p class="tw-truncate tw-text-justify tw-text-white">
-            Nunc sodales massa vel auctor accumsan. Quisque felis mauris,
-            maximus rutrum orci id, posuere tristique enim. Etiam dapibus, dui
-            in convallis semper, erat purus dignissim ex, id laoreet justo nisi
-            vitae turpis. Nam laoreet eros est, venenatis tincidunt purus ornare
-            hendrerit. Nullam venenatis dui urna, placerat congue risus eleifend
-            a. Vestibulum pulvinar mi et dignissim accumsan. Nam volutpat libero
-            et purus tincidunt interdum. Etiam aliquet augue vel tellus laoreet,
-            et viverra massa semper. Donec interdum et neque nec varius.
-            Phasellus volutpat semper maximus. Aliquam sit amet nisl lacinia,
-            commodo elit ultricies, pretium mi. Sed congue leo nibh, a tempus mi
-            blandit sit amet. Nunc nisi nibh, pretium ac eros eu, finibus
-            commodo urna. Vivamus accumsan viverra imperdiet.
+            {{ item.excerpt }}
           </p>
         </v-img>
-        <Link :href="route('artikel')" class="tw-col-span-2 sm:tw-col-span-3">
-          <v-btn variant="outlined" class="tw-w-full"> Selengkapnya </v-btn>
-        </Link>
+
       </div>
       <div class="text-center tw-flex tw-justify-end">
         <v-pagination
@@ -116,6 +77,9 @@ export default {
   components: {
     Head,
     HomeLayout,
+  },
+  props: {
+    posts: Object,
   },
   data: () => ({
     loaded: false,
@@ -142,6 +106,9 @@ export default {
         this.loaded = true;
       }, 20000);
     },
+  },
+  mounted() {
+    console.log(this.posts);
   },
 };
 </script>

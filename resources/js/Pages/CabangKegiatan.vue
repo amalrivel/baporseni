@@ -15,9 +15,12 @@
       </v-img>
     </div>
     <div
-      class="tw-container tw-mx-auto tw-grid tw-grid-cols-1 tw-gap-4 tw-p-4 sm:tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4">
+      class="tw-container tw-mx-auto tw-grid tw-grid-cols-1 tw-gap-4 tw-p-4 md:tw-grid-cols-2 lg:tw-grid-cols-3">
       <!-- <div class="tw-container tw-mx-auto tw-flex  tw-flex-wrap tw-gap-4 tw-p-4"> -->
-      <ExpansionCard v-for="n in 10" :key="n" />
+      <ExpansionCard
+        v-for="(category, index) in categories"
+        :key="index"
+        :category="category" />
     </div>
   </HomeLayout>
 </template>
@@ -33,29 +36,11 @@ export default {
     HomeLayout,
     ExpansionCard,
   },
+  props: {
+    categories: Object,
+  },
   data() {
-    return {
-      items: [
-        {
-          title: "Dashboard",
-        },
-        {
-          title: "Link 1",
-        },
-        {
-          title: "Link 2",
-        },
-      ],
-
-      colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4",
-      ],
-      slides: ["First", "Second", "Third", "Fourth", "Fifth"],
-    };
+    return {};
   },
 };
 </script>

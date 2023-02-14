@@ -19,34 +19,11 @@ use Inertia\Inertia;
 */
 
 Route::get("/", [HomeController::class, "beranda"]);
-
-// Route::get("/", function () {
-//   return Inertia::render("Home", [
-//     "laravelVersion" => Application::VERSION,
-//     "phpVersion" => PHP_VERSION,
-//   ]);
-// });
-
-Route::get("/profil", function () {
-  return Inertia::render("Profil", [
-    "laravelVersion" => Application::VERSION,
-    "phpVersion" => PHP_VERSION,
-  ]);
-})->name("profil");
-
-Route::get("/cabang", function () {
-  return Inertia::render("CabangKegiatan", [
-    "laravelVersion" => Application::VERSION,
-    "phpVersion" => PHP_VERSION,
-  ]);
-})->name("cabangKegiatan");
-
-Route::get("/artikel", function () {
-  return Inertia::render("Artikel", [
-    "laravelVersion" => Application::VERSION,
-    "phpVersion" => PHP_VERSION,
-  ]);
-})->name("artikel");
+Route::get("/profil", [HomeController::class, "profil"])->name("profil");
+Route::get("/cabang", [HomeController::class, "cabang"])->name(
+  "cabangKegiatan"
+);
+Route::get("/artikel", [HomeController::class, "artikel"])->name("artikel");
 
 Route::get("/kontak", function () {
   return Inertia::render("Kontak", [

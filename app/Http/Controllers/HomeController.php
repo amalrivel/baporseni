@@ -15,52 +15,56 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-  public function beranda()
-  {
-    $carousel = Post::latest()
-      ->with("category")
-      ->where("at_carousel", 1)
-      ->where("is_delete", 0)
-      ->get();
+    public function index()
+    {
+        $carousel = Post::latest()
+            ->with("category")
+            ->where("at_carousel", 1)
 
-    $posts = Post::latest()
-      ->with("category")
-      ->where("is_delete", 0)
-      ->take(5)
-      ->get();
+            ->get();
 
-    $categories = Category::all();
+        $posts = Post::latest()
+            ->with("category")
 
-    return Inertia::render("Home", [
-      "laravelVersion" => Application::VERSION,
-      "phpVersion" => PHP_VERSION,
-      "carousel" => $carousel,
-      "posts" => $posts,
-      "categories" => $categories,
-    ]);
-  }
+            ->take(5)
+            ->get();
 
-  public function profil()
-  {
-    return Inertia::render("Profil", []);
-  }
-  public function cabang()
-  {
-    $categories = Category::all();
+        $categories = Category::all();
 
-    return Inertia::render("CabangKegiatan", [
-      "categories" => $categories,
-    ]);
-  }
-  public function artikel()
-  {
-    $posts = Post::latest()
-      ->with("category")
-      ->where("is_delete", 0)->paginate(9)
-      ;
+        return Inertia::render("Index", [
+            "carousel" => $carousel,
+            "posts" => $posts,
+            "categories" => $categories,
+        ]);
+    }
 
-    return Inertia::render("Artikel", [
-      "posts" => $posts,
-    ]);
-  }
+    public function profil()
+    {
+        return Inertia::render("Profil", []);
+    }
+
+    public function cabang()
+    {
+        $categories = Category::all();
+
+        return Inertia::render("CabangKegiatan", [
+            "categories" => $categories,
+        ]);
+    }
+
+    public function artikel()
+    {
+        $posts = Post::latest()
+            ->with("category")
+            ->paginate(9);
+
+        return Inertia::render("Artikel", [
+            "posts" => $posts,
+        ]);
+    }
+
+    public function kontak()
+    {
+        return Inertia::render("Kontak", []);
+    }
 }

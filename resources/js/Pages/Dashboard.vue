@@ -25,21 +25,15 @@ import { Head } from "@inertiajs/inertia-vue3";
         <div
           class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
           <div class="tw-p-6 tw-text-gray-900">
-            <h3>Blog Post</h3>
-            <v-table>
-              <thead>
-                <tr v-for="(post, index) in Object.keys(posts[0])" :key="index">
-                  <th v-if="index === 0">No</th>
-                  <th class="text-left">{{ post }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(post, index) in posts" :key="index">
-                  <td>{{ index + 1 }}</td>
-                  <td>{{ post.title }}</td>
-                </tr>
-              </tbody>
-            </v-table>
+            <h3>Laravel Version</h3>
+            <p>{{ laravelVersion }}</p>
+          </div>
+        </div>
+        <div
+          class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
+          <div class="tw-p-6 tw-text-gray-900">
+            <h3>php Version</h3>
+            <p>{{ phpVersion }}</p>
           </div>
         </div>
       </div>
@@ -58,29 +52,19 @@ export default {
     AuthenticatedLayout,
   },
   props: {
-    posts: Object,
-    status: String,
+    laravelVersion: String,
+    phpVersion: String,
   },
 
   data() {
     return {
-      aspectRatio: 16 / 9,
-      colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4",
-      ],
-      slides: ["First", "Second", "Third", "Fourth", "Fifth"],
-      repetions: [0, 1, 2, 3],
       user: usePage().props.value.auth.user,
     };
   },
 
   mounted() {
     console.log(usePage().props.value.auth.user.name);
-    console.log(this.status);
+    console.log(this.$props)
   },
 };
 </script>

@@ -3,36 +3,28 @@
 
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-gray-800">Post</h2>
+      <h2 class="tw-text-xl tw-font-semibold tw-leading-tight tw-text-gray-800">
+        Post
+      </h2>
     </template>
+    <div
+      v-if="$page.props.flash.message"
+      class="tw-mb-4 tw-bg-green-100 tw-p-4 tw-text-sm tw-text-green-700 sm:tw-rounded-lg"
+      role="alert">
+      <span class="tw-font-medium">
+        {{ $page.props.flash.message }}
+      </span>
+    </div>
+    <div class="tw-py-12">
+      <div
+        class="tw-mx-auto tw-flex tw-max-w-7xl tw-flex-col tw-gap-4 sm:tw-px-6 lg:tw-px-8">
 
-    <div class="py-12">
-      <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-white p-4 shadow sm:rounded-lg sm:p-8">
-          <h2 className="text-lg font-medium text-gray-900">
-            Title : {{ post.title }}
-          </h2>
-          <p className="mt-1 text-sm text-gray-600">
-            category : {{ category[0].name }}
-          </p>
-          <p className="mt-1 text-sm text-gray-600">
-            author : {{ user[0].name }}
-          </p>
-          <p className="mt-1 text-sm text-gray-600">{{ post.body }}</p>
-          <p className="mt-1 text-sm text-gray-600">
-            update : {{ post.updated_at }}
-          </p>
-          <div class="flex justify-end gap-4">
-            <Link
-              :href="route('dashboard.posts.edit', post.slug)"
-              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900">
-              Edit
-            </Link>
-            <button
-              @click="destroy(post.slug)"
-              class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-gray-900">
-              Delete
-            </button>
+        <div
+          class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
+          <div class="tw-p-6 tw-text-gray-900">
+            <h4>{{ post.title }}</h4>
+            <p></p>
+            <p></p>
           </div>
         </div>
       </div>
@@ -44,8 +36,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
-
-const form = useForm();
 
 export default {
   components: {
@@ -59,6 +49,7 @@ export default {
     category: Object,
     user: Object,
   },
+  methods: {},
   setup() {
     const form = useForm();
     const destroy = (id) => {

@@ -3,45 +3,50 @@
 
   <AuthenticatedLayout>
     <template #header>
-      <h2 class="text-xl font-semibold leading-tight text-gray-800">Post</h2>
+      <h2 class="tw-text-xl tw-font-semibold tw-leading-tight tw-text-gray-800">
+        Post
+      </h2>
     </template>
-
-    <form @submit.prevent="updatePassword" class="py-12">
-      <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
-        <div class="overflow-hidden bg-white p-4 shadow sm:rounded-lg sm:p-8">
-          <form @submit.prevent="submit">
-            <div>
-              <InputLabel for="title" value="Title" />
-              <TextInput
-                id="title"
-                ref="title"
-                v-model="form.title"
-                type="text"
-                class="mt-1 block w-full" />
-              <InputError :message="form.errors.title" class="mt-2" />
+    <div
+      v-if="$page.props.flash.message"
+      class="tw-mb-4 tw-bg-green-100 tw-p-4 tw-text-sm tw-text-green-700 sm:tw-rounded-lg"
+      role="alert">
+      <span class="tw-font-medium">
+        {{ $page.props.flash.message }}
+      </span>
+    </div>
+    <div class="tw-py-12">
+      <div
+        class="tw-mx-auto tw-flex tw-max-w-7xl tw-flex-col tw-gap-4 sm:tw-px-6 lg:tw-px-8">
+        <div
+          class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
+          <div class="tw-p-6 tw-text-gray-900">
+            <h3 class="mb-4">Create Post</h3>
+            <v-text-field
+              v-model="firstname"
+              label="Title"
+              required></v-text-field>
+            <v-textarea label="Content"></v-textarea>
+            <div class="tw-gap-4 sm:tw-flex">
+              <v-combobox
+                label="Category"
+                :items="category.map((item) => item.name)"></v-combobox>
+              <v-file-input label="Image"></v-file-input>
             </div>
-            <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
-          </form>
+            <v-checkbox label="Carousel"></v-checkbox>
+          </div>
         </div>
       </div>
-    </form>
+    </div>
   </AuthenticatedLayout>
 </template>
 
 <script>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import { Head, Link } from "@inertiajs/inertia-vue3";
-import InputError from "@/Components/InputError.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import TextInput from "@/Components/TextInput.vue";
+import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
 import { useForm } from "@inertiajs/inertia-vue3";
-
-const form = useForm({
-  title: "",
-  slug: "",
-  content: "",
-});
+import { ref } from "vue";
 
 export default {
   components: {
@@ -49,32 +54,62 @@ export default {
     Head,
     PrimaryButton,
     Link,
-    InputError,
-    InputLabel,
-    TextInput,
-    useForm,
   },
-  data() {
-    return {
-      currentDataInput: null,
-      dataInput: null,
+  props: {
+    category: Object,
+    user: Object,
+  },
+  methods: {},
+  setup() {
+    const form = useForm();
+    const destroy = (id) => {
+      if (confirm("Are you sure you want to Delete")) {
+        form.delete(route("dashboard.posts.destroy", id), {
+          preserveScroll: true,
+        });
+      }
     };
+    return { form, destroy };
   },
   setup() {
+    const Title = ref(null);
+    const Content = ref(null);
+    const Category = ref(null);
+    const Carousel = ref(null);
+
     const form = useForm({
-      title: "",
-      slug: "",
-      content: "",
+      current_password: "",
+      password: "",
+      password_confirmation: "",
     });
-    const submit = () => {
-      console.log(form.post());
-      //   form.post(route("blogs.store"));
+
+    const updatePassword = () => {
+      form.put(route("password.update"), {
+        preserveScroll: true,
+        onSuccess: () => form.reset(),
+        onError: () => {
+          if (form.errors.password) {
+            form.reset("password", "password_confirmation");
+            passwordInput.value.focus();
+          }
+          if (form.errors.current_password) {
+            form.reset("current_password");
+            currentPasswordInput.value.focus();
+          }
+        },
+      });
     };
 
-    return { form, submit };
+    return {
+      passwordInput,
+      currentPasswordInput,
+      form,
+      updatePassword,
+    };
   },
+
   created() {
-    // console.log(this.form);
+    console.log(this.$props);
   },
 };
 </script>

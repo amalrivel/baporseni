@@ -15,19 +15,24 @@ use Inertia\Inertia;
 
 class AdminController extends Controller
 {
-  public function dashboard()
-  {
-    $posts = Post::latest()
-      ->with("category")
-      ->where("at_carousel", 1)
-      ->where("is_delete", 0)
-      ->get();
+    public function dashboard()
+    {
+        $posts = Post::latest()
+            ->with("category")
+            ->where("at_carousel", 1)
+            ->get();
 
-    return Inertia::render("Dashboard", [
-      "posts" => $posts,
-      "status" => session("status"),
-    ]);
-  }
-
-
+        return Inertia::render("Dashboard", [
+            "posts" => $posts,
+            "status" => session("status"),
+            "laravelVersion" => Application::VERSION,
+            "phpVersion" => PHP_VERSION,
+            'name' => config('app.name'),
+            'version' => config('app.version'),
+            'description' => config('app.description'),
+            'url' => config('app.url'),
+            'timezone' => config('app.timezone'),
+            'locale' => config('app.locale'),
+        ]);
+    }
 }

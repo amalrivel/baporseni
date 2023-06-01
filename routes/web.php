@@ -19,19 +19,21 @@ use Inertia\Inertia;
 |
 */
 
-Route::get("/", [HomeController::class, "beranda"]);
+Route::get("/", [HomeController::class, "index"]);
 Route::get("/profil", [HomeController::class, "profil"])->name("profil");
 Route::get("/cabang", [HomeController::class, "cabang"])->name(
     "cabangKegiatan"
 );
 Route::get("/artikel", [HomeController::class, "artikel"])->name("artikel");
 
-Route::get("/kontak", function () {
-    return Inertia::render("Kontak", [
-        "laravelVersion" => Application::VERSION,
-        "phpVersion" => PHP_VERSION,
-    ]);
-})->name("kontak");
+Route::get("/kontak", [HomeController::class, "kontak"])->name("kontak");
+
+// Route::get("/kontak", function () {
+//     return Inertia::render("Kontak", [
+//         "laravelVersion" => Application::VERSION,
+//         "phpVersion" => PHP_VERSION,
+//     ]);
+// })->name("kontak");
 
 // Route::get("/dashboard", function () {
 //   return Inertia::render("Dashboard");

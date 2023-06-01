@@ -21,7 +21,6 @@ return new class extends Migration {
       $table->string("image")->nullable();
       $table->text("excerpt");
       $table->text("body");
-      $table->boolean("is_delete");
       $table->boolean("at_carousel");
       $table->timestamps();
     });

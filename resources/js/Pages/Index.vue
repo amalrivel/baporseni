@@ -63,7 +63,6 @@
           </div>
           <v-img
             v-for="(item, index) in posts.slice(1)"
-
             :key="index"
             :src="item.image"
             alt=""

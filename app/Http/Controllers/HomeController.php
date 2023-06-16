@@ -15,56 +15,54 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        $carousel = Post::latest()
-            ->with("category")
-            ->where("at_carousel", 1)
+  public function index()
+  {
+    $carousel = Post::latest()
+      ->with("category")
+      ->where("at_carousel", 1)
+      ->get();
 
-            ->get();
+    $posts = Post::latest()
+      ->with("category")
+      ->take(5)
+      ->get();
 
-        $posts = Post::latest()
-            ->with("category")
+    $categories = Category::all();
 
-            ->take(5)
-            ->get();
+    return Inertia::render("Index", [
+      "carousel" => $carousel,
+      "posts" => $posts,
+      "categories" => $categories,
+    ]);
+  }
 
-        $categories = Category::all();
+  public function profil()
+  {
+    return Inertia::render("Profil", []);
+  }
 
-        return Inertia::render("Index", [
-            "carousel" => $carousel,
-            "posts" => $posts,
-            "categories" => $categories,
-        ]);
-    }
+  public function cabang()
+  {
+    $categories = Category::all();
 
-    public function profil()
-    {
-        return Inertia::render("Profil", []);
-    }
+    return Inertia::render("CabangKegiatan", [
+      "categories" => $categories,
+    ]);
+  }
 
-    public function cabang()
-    {
-        $categories = Category::all();
+  public function artikel()
+  {
+    $posts = Post::latest()
+      ->with("category")
+      ->paginate(9);
 
-        return Inertia::render("CabangKegiatan", [
-            "categories" => $categories,
-        ]);
-    }
+    return Inertia::render("Artikel", [
+      "posts" => $posts,
+    ]);
+  }
 
-    public function artikel()
-    {
-        $posts = Post::latest()
-            ->with("category")
-            ->paginate(9);
-
-        return Inertia::render("Artikel", [
-            "posts" => $posts,
-        ]);
-    }
-
-    public function kontak()
-    {
-        return Inertia::render("Kontak", []);
-    }
+  public function kontak()
+  {
+    return Inertia::render("Kontak", []);
+  }
 }

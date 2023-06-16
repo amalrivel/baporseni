@@ -18,7 +18,6 @@
     <div class="tw-py-12">
       <div
         class="tw-mx-auto tw-flex tw-max-w-7xl tw-flex-col tw-gap-4 sm:tw-px-6 lg:tw-px-8">
-
         <div
           class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
           <div class="tw-p-6 tw-text-gray-900">

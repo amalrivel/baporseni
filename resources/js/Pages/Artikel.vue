@@ -32,11 +32,10 @@
         @click:append-inner="onClick"></v-text-field>
 
       <div class="tw-mt-4 tw-grid tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-3">
-
         <v-img
-        v-for="(item, index) in posts.data"
-            :key="index"
-            :src="item.image"
+          v-for="(item, index) in posts.data"
+          :key="index"
+          :src="item.image"
           alt=""
           :aspect-ratio="aspectRatio"
           :gradient="`to left bottom,
@@ -52,12 +51,11 @@
             ${item.category.color2[3]})`"
           class="tw-flex tw-items-end tw-rounded-lg tw-p-4"
           cover>
-          <h2 class=" tw-text-white">{{ item.title }}</h2>
+          <h2 class="tw-text-white">{{ item.title }}</h2>
           <p class="tw-truncate tw-text-justify tw-text-white">
             {{ item.excerpt }}
           </p>
         </v-img>
-
       </div>
       <div class="text-center tw-flex tw-justify-end">
         <v-pagination

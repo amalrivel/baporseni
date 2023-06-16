@@ -22,7 +22,7 @@ use Inertia\Inertia;
 Route::get("/", [HomeController::class, "index"]);
 Route::get("/profil", [HomeController::class, "profil"])->name("profil");
 Route::get("/cabang", [HomeController::class, "cabang"])->name(
-    "cabangKegiatan"
+  "cabangKegiatan"
 );
 Route::get("/artikel", [HomeController::class, "artikel"])->name("artikel");
 
@@ -41,22 +41,24 @@ Route::get("/kontak", [HomeController::class, "kontak"])->name("kontak");
 //   ->middleware(["auth", "verified"])
 //   ->name("dashboard");
 
-Route::get("/dashboard", [AdminController::class, "dashboard"])->name("dashboard");
+Route::get("/dashboard", [AdminController::class, "dashboard"])->name(
+  "dashboard"
+);
 
 Route::resource("/dashboard/posts", PostController::class, [
-    "as" => "dashboard",
+  "as" => "dashboard",
 ])->middleware(["auth", "verified"]);
 
 Route::middleware("auth")->group(function () {
-    Route::get("/profile", [ProfileController::class, "edit"])->name(
-        "profile.edit"
-    );
-    Route::patch("/profile", [ProfileController::class, "update"])->name(
-        "profile.update"
-    );
-    Route::delete("/profile", [ProfileController::class, "destroy"])->name(
-        "profile.destroy"
-    );
+  Route::get("/profile", [ProfileController::class, "edit"])->name(
+    "profile.edit"
+  );
+  Route::patch("/profile", [ProfileController::class, "update"])->name(
+    "profile.update"
+  );
+  Route::delete("/profile", [ProfileController::class, "destroy"])->name(
+    "profile.destroy"
+  );
 });
 
 require __DIR__ . "/auth.php";

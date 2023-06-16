@@ -64,7 +64,7 @@ export default {
 
   mounted() {
     console.log(usePage().props.value.auth.user.name);
-    console.log(this.$props)
+    console.log(this.$props);
   },
 };
 </script>

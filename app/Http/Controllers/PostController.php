@@ -25,7 +25,7 @@ class PostController extends Controller
     // $posts = Post::all();
     // dd($posts);
 
-    return Inertia::render("Post/Index", [
+    return Inertia::render("Dashboard/Post/Index", [
       "posts" => $posts,
     ]);
   }
@@ -43,7 +43,7 @@ class PostController extends Controller
     } else {
       $category = Category::where("id", "=", $user->category_id)->get();
     }
-    return Inertia::render("Post/Create", [
+    return Inertia::render("Dashboard/Post/Create", [
       "category" => $category,
     ]);
   }
@@ -58,12 +58,13 @@ class PostController extends Controller
   {
     $request->validate([
       "title" => "required|string|max:255",
-      // 'slug' => 'required|string|max:255',
       "content" => "required",
+      "category" => "required",
+
     ]);
     Post::create([
       "title" => $request->title,
-      // 'slug' => Str::slug($request->slug),
+    //   'slug' => Str::slug($request->slug),
       "content" => $request->content,
     ]);
     sleep(1);
@@ -81,7 +82,7 @@ class PostController extends Controller
    */
   public function show(Post $post)
   {
-    return Inertia::render("Post/Show", [
+    return Inertia::render("Dashboard/Post/Show", [
       "post" => $post,
       "category" => Category::where("id", "=", $post->category_id)->get(),
       "user" => User::where("id", "=", $post->user_id)->get(),
@@ -96,7 +97,7 @@ class PostController extends Controller
    */
   public function edit(Post $post)
   {
-    return Inertia::render("Post/Edit", [
+    return Inertia::render("Dashboard/Post/Edit", [
       "post" => $post,
       "category" => Category::all(),
     ]);

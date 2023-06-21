@@ -1,8 +1,3 @@
-<!-- <script setup>
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import { Head } from "@inertiajs/inertia-vue3";
-</script> -->
-
 <template>
   <Head title="Dashboard" />
 
@@ -27,11 +22,7 @@ import { Head } from "@inertiajs/inertia-vue3";
           <div class="tw-p-6 tw-text-gray-900">
             <h3>Laravel Version</h3>
             <p>{{ laravelVersion }}</p>
-          </div>
-        </div>
-        <div
-          class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
-          <div class="tw-p-6 tw-text-gray-900">
+            <br>
             <h3>php Version</h3>
             <p>{{ phpVersion }}</p>
           </div>

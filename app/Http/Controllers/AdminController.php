@@ -22,7 +22,7 @@ class AdminController extends Controller
       ->where("at_carousel", 1)
       ->get();
 
-    return Inertia::render("Dashboard", [
+    return Inertia::render("Dashboard/Index", [
       "posts" => $posts,
       "status" => session("status"),
       "laravelVersion" => Application::VERSION,

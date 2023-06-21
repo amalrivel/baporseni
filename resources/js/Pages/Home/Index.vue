@@ -1,6 +1,7 @@
 <template>
   <Head title="Baporseni" />
   <HomeLayout>
+
     <v-carousel
       cycle
       height=""
@@ -30,6 +31,7 @@
         </div>
       </v-carousel-item>
     </v-carousel>
+
     <div class="-tw-mt-8 tw-bg-slate-100">
       <div
         class="tw-container tw-relative tw-z-40 tw-mx-auto tw-flex tw-flex-col tw-bg-white tw-p-4 sm:tw-mt-8 sm:tw-rounded-lg">
@@ -90,6 +92,7 @@
           </Link>
         </div>
       </div>
+
       <v-parallax
         src="https://picsum.photos/1009"
         height="500"
@@ -147,18 +150,8 @@ export default {
   data() {
     return {
       aspectRatio: 16 / 9,
-      colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4",
-      ],
-      slides: ["First", "Second", "Third", "Fourth", "Fifth"],
-      repetions: [0, 1, 2, 3],
     };
   },
-
   mounted() {
     // console.log(this.posts);
   },

@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     $categories = Category::all();
 
-    return Inertia::render("Index", [
+    return Inertia::render("Home/Index", [
       "carousel" => $carousel,
       "posts" => $posts,
       "categories" => $categories,
@@ -38,14 +38,14 @@ class HomeController extends Controller
 
   public function profil()
   {
-    return Inertia::render("Profil", []);
+    return Inertia::render("Home/Profil", []);
   }
 
   public function cabang()
   {
     $categories = Category::all();
 
-    return Inertia::render("CabangKegiatan", [
+    return Inertia::render("Home/CabangKegiatan", [
       "categories" => $categories,
     ]);
   }
@@ -56,13 +56,13 @@ class HomeController extends Controller
       ->with("category")
       ->paginate(9);
 
-    return Inertia::render("Artikel", [
+    return Inertia::render("Home/Artikel", [
       "posts" => $posts,
     ]);
   }
 
   public function kontak()
   {
-    return Inertia::render("Kontak", []);
+    return Inertia::render("Home/Kontak", []);
   }
 }

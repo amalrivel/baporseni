@@ -14,6 +14,9 @@ import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 const appName =
   window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
 
@@ -32,6 +35,7 @@ createInertiaApp({
     });
     return createApp({ render: () => h(app, props) })
       .use(plugin)
+      .component('QuillEditor', QuillEditor)
       .use(vuetify)
       .use(ZiggyVue, Ziggy)
       .mount(el);

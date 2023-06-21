@@ -51,7 +51,6 @@ const submit = () => {
           id="email"
           type="email"
           v-model="form.email"
-          :rules="form.errors.email"
           required
           autofocus
           label="Email"></v-text-field>

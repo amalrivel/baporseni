@@ -9,18 +9,21 @@
     </template>
     <div
       v-if="$page.props.flash.message"
-      class="tw-mb-4 tw-bg-green-100 tw-p-4 tw-text-sm tw-text-green-700 sm:tw-rounded-lg"
+      class="tw-bg-green-100 tw-p-4 tw-text-sm tw-text-green-700 sm:tw-rounded-lg"
       role="alert">
       <span class="tw-font-medium">
         {{ $page.props.flash.message }}
       </span>
     </div>
-    <div class="tw-py-12">
+    <div class="tw-py-4">
       <div
         class="tw-mx-auto tw-flex tw-max-w-7xl tw-flex-col tw-gap-4 sm:tw-px-6 lg:tw-px-8">
-        <Link :href="route('dashboard.posts.create')" class="tw-px-6">
-          <v-btn color="blue"> Create </v-btn>
-        </Link>
+        <div>
+          <v-btn color="blue"
+            ><Link :href="route('dashboard.posts.create')"> Create </Link>
+          </v-btn>
+        </div>
+
         <div
           class="tw-overflow-hidden tw-bg-white tw-shadow-sm sm:tw-rounded-lg">
           <div class="tw-p-6 tw-text-gray-900">

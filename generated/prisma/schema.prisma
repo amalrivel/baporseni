@@ -1,0 +1,151 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Roles: Admin, Staff, Member
+enum RoleName {
+  ADMIN
+  STAFF
+  MEMBER
+}
+
+// Registration status enum
+enum RegistrationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+// News categories enum
+enum NewsCategory {
+  OLAHRAGA
+  OLAHRAGA_ELEKTRONIK
+  SENI
+  UMUM
+}
+
+model Role {
+  id    Int      @id @default(autoincrement())
+  name  RoleName @unique
+  users User[]
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  role          Role           @relation(fields: [roleId], references: [id])
+  roleId        Int
+  name          String
+  email         String         @unique
+  password      String
+  phone         String?
+  createdAt     DateTime       @default(now())
+  news          News[]         @relation("AuthorNews")
+  registrations Registration[]
+  createdEvents Event[]        @relation("CreatedEvents")
+  branchStaff   BranchStaff[] // associations to branches as staff
+}
+
+model Category {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  events Event[]
+}
+
+model Event {
+  id            Int            @id @default(autoincrement())
+  category      Category       @relation(fields: [categoryId], references: [id])
+  categoryId    Int
+  title         String
+  description   String?
+  location      String?
+  startDate     DateTime
+  endDate       DateTime
+  quota         Int            @default(0)
+  createdBy     User?          @relation("CreatedEvents", fields: [createdById], references: [id])
+  createdById   Int?
+  createdAt     DateTime       @default(now())
+  registrations Registration[]
+  galleries     Gallery[]
+  branch        Branch?        @relation(fields: [branchId], references: [id])
+  branchId      Int?
+}
+
+model Registration {
+  id           Int                @id @default(autoincrement())
+  event        Event              @relation(fields: [eventId], references: [id])
+  eventId      Int
+  user         User               @relation(fields: [userId], references: [id])
+  userId       Int
+  registeredAt DateTime           @default(now())
+  status       RegistrationStatus @default(PENDING)
+}
+
+model News {
+  id          Int          @id @default(autoincrement())
+  author      User         @relation("AuthorNews", fields: [authorId], references: [id])
+  authorId    Int
+  branch      Branch       @relation(fields: [branchId], references: [id])
+  branchId    Int
+  title       String
+  content     String
+  category    NewsCategory @default(UMUM)
+  publishedAt DateTime     @default(now())
+}
+
+model Gallery {
+  id      Int     @id @default(autoincrement())
+  event   Event   @relation(fields: [eventId], references: [id])
+  eventId Int
+  title   String?
+  photos  Photo[]
+}
+
+model Photo {
+  id         Int      @id @default(autoincrement())
+  gallery    Gallery  @relation(fields: [galleryId], references: [id])
+  galleryId  Int
+  filePath   String
+  caption    String?
+  uploadedAt DateTime @default(now())
+}
+
+model Branch {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique
+  description String?
+  news        News[]
+  branchStaff BranchStaff[]
+  events      Event[]
+}
+
+model BranchStaff {
+  id         Int      @id @default(autoincrement())
+  branch     Branch   @relation(fields: [branchId], references: [id])
+  branchId   Int
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int
+  assignedAt DateTime @default(now())
+
+  @@unique([branchId, userId])
+}
+
+model Contact {
+  id      Int      @id @default(autoincrement())
+  name    String
+  email   String
+  subject String?
+  message String
+  sentAt  DateTime @default(now())
+}

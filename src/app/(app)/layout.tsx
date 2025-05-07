@@ -26,39 +26,39 @@ export default function Layout({
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/cabang" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link href="/cabang">
                     Cabang
-                  </NavigationMenuLink>
                 </Link>
+                  </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/berita" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link href="/berita">
                     Berita
-                  </NavigationMenuLink>
                 </Link>
+                  </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/kegiatan"  passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link href="/kegiatan" >
                     Kegiatan
-                  </NavigationMenuLink>
                 </Link>
+                  </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/galeri" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link href="/galeri">
                     Galeri
-                  </NavigationMenuLink>
                 </Link>
+                  </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/kontak" passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                <Link href="/kontak">
                     Kontak
-                  </NavigationMenuLink>
                 </Link>
+                  </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

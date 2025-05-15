@@ -18,7 +18,7 @@ export default function Layout({
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header & Navbar */}
       <header className="border-b sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between">
+        <div className="container mx-auto px-4 flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-xl hidden md:inline-block">Baporseni</span>
           </Link>
@@ -75,13 +75,13 @@ export default function Layout({
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto py-8 px-4">
+      <main className="flex-grow">
         {children}
       </main>
 
       {/* Footer */}
       <footer className="border-t py-8 bg-muted/40">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-medium text-lg mb-4">Baporseni PT Timah</h3>
